@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:200,300,400,600')
+.more-pens
+  position: fixed
+  left: 20px
+  bottom: 20px
+  z-index: 10
+
+a.white-mode, a.white-mode:link, a.white-mode:visited, a.white-mode:active
+  font-family: "Montserrat"
+  font-size: 12px
+  text-decoration: none
+  background: #212121
+  padding: 4px 8px
+  color: #f7f7f7
+  &:hover
+    background: #edf3f8
+    color: #212121
+
+body
+  margin: 0
+  padding: 0
+  width: 100%
+  height: 100%
+  background: #7B0F3B
+  font-family: "Montserrat"
+  font-size: 12px
+  text-decoration: none
+  overflow: hidden
+
+  
+.title
+  z-index: 10
+  position: absolute
+  left: 50%
+  top: 46%
+  transform: translateX(-50%) translateY(-50%)
+  font-family: "Montserrat"
+  text-align: center
+  width: 600px
+  
+  h3
+    position: relative
+    font-weight: 200
+    font-size: 20px
+    padding: 0
+    margin: 0
+    line-height: 1
+    color: #d11b60
+    letter-spacing: 2px
+    display: inline-block
+    &.hello
+      color: #FFFFFF
+      bottom: -20px
+    &.plasm
+      font-weight: 200
+      font-size: 14px
+      padding: 0
+      margin: 0
+      line-height: 1
+      color: #FFFFFF
+      letter-spacing: 2px
+      display: inline-block
+      z-index: 1
+      bottom: 30px
+      width: 100%
+      text-align: center
+      &:before
+        position: relative
+        content: ""
+        display: block
+        border-top: 1px solid white
+        width: 280px
+        left: 50%
+        transform: translateX(-50%)
+        margin-bottom: 14px
+        opacity: .4
+
+
+
+.hello-dribbble
+  position: relative
+  top: 0
+  transform: scale(.5)
+
+.dribbble
+  fill: #FFF

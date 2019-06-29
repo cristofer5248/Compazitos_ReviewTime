@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en" >
+	<head>
+		<meta charset="UTF-8">
+		<title>Compazitos Review Time!</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="https://fonts.googleapis.com/css?family=Merriweather|Open+Sans:700,800" rel="stylesheet">
+		<link rel="stylesheet" href="css/normalize.min.css">
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+		
+		<link rel="stylesheet" href="css/style.css">
+		<script type="text/javascript" src="js/jquery-3.4.1.js"></script>
+		<!--<script type="text/javascript" src="js/r.js"></script>-->
+		
+		
+	</head>
+	<body>
+		<header id="header">
+			<div class="logo">
+				<svg id="circle" xmlns="http://www.w3.org/2000/svg" version="1.1" height="100" width="100">
+					<circle cx="50" cy="50" r="50" fill="#c80815" />
+					<text x="25" y="70" fill="#ffffff" style="font-size: 60px;">Q</text>
+				</svg>
+			</div>
+			<div class="title">
+				<h1 class="site-title">Quiz <span class="small">Master</span></h1>
+			</div>
+			<div class="score">
+				<p id="score-counter">0</p>
+				<p class="points">Points</p>
+			</div>
+		</header>
+		<!-- Modal -->
+		<div class="modal fade" id="myModal" role="dialog">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<div class="modal-body">
+						<label for="example1" style="color:black;"> N° de preguntas:</label>
+						<input class="form-control" id="limitq" id="nq" aria-describedby="emailHelp" placeholder="Ingrese un numero" type="number">
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+						<button id="enviar1" class="btn btn-primary" onclick="cambiarConstante()">Iniciar</button>						
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade" id="myModal2" role="dialog">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content" style="background-color: transparent;">
+					<div class="modal-body modalpopup" id="bodymodal2">
+						
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="content">
+			<!-- Button trigger modal -->
+			<center>
+			<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+			Iniciar
+			</button>
+			<button type="button" class="btn btn-primary" onclick="cambiarConstante();">
+			lanzar
+			</button>
+			</center>			
+			<div id="question-box"><p id="the-question"></p></div>
+			<div id="answer-box">
+				<ul>
+					<li class="answer">A: <span id="first-answer"></span></li>
+					<li class="answer">B: <span id="second-answer"></span></li>
+					<li class="answer">C: <span id="third-answer"></span></li>
+					<li class="answer">D: <span id="fourth-answer"></span></li>
+				</ul>
+			</div>
+			<select id="teamS" class="custom-select mr-sm-2">
+				<option value="1">Grupo A</option>
+				<option value="2">Grupo B</option>
+			</select>
+		</div>
+		<div class="results-container">
+			<div class="results">
+				<h1>Resultados!</h1>
+				<div class="result-text"><p>Hemos finalizado, Fueron un total de : <span id="num-total">0</span> preguntas respondidas correctamente, Equipo A : <span id="num-correct">0</span> preguntas correctas, Equipo B: <span id="num-correct2">0</span> preguntas correctas, Respuestas incorrectas en total: <span id="num-wrong">0</span>!</div>
+			</div>
+		</div>
+		<footer id="footer">
+			<p>Just another excercise in JavaScript.</p>
+		</footer>
+		
+		
+		<script  src="js/index.js"></script>
+		<!--<script type="text/javascript" src="js/jquery-3.4.1.js"></script>-->
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+		
+	</body>
+</html>
