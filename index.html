@@ -7,15 +7,16 @@
 		<link href="https://fonts.googleapis.com/css?family=Merriweather|Open+Sans:700,800" rel="stylesheet">
 		<link rel="stylesheet" href="css/normalize.min.css">
 		<link rel="stylesheet" href="css/bootstrap.min.css">
-		
+
 		<link rel="stylesheet" href="css/style.css">
 		<script type="text/javascript" src="js/jquery-3.4.1.js"></script>
 		<!--<script type="text/javascript" src="js/r.js"></script>-->
-		
-		
+
+
 	</head>
 	<body>
 		<header id="header">
+
 			<div class="logo">
 				<svg id="circle" xmlns="http://www.w3.org/2000/svg" version="1.1" height="100" width="100">
 					<circle cx="50" cy="50" r="50" fill="#c80815" />
@@ -23,7 +24,7 @@
 				</svg>
 			</div>
 			<div class="title">
-				<h1 class="site-title">Quiz <span class="small">Master</span></h1>
+				<h1 class="site-title">Compazitos  <span class="small">Review Time!</span></h1>
 			</div>
 			<div class="score">
 				<p id="score-counter">0</p>
@@ -46,7 +47,7 @@
 					</div>
 					<div class="modal-footer">
 						<button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-						<button id="enviar1" class="btn btn-primary" onclick="cambiarConstante()">Iniciar</button>						
+						<button id="enviar1" class="btn btn-primary" onclick="cambiarConstante()">Iniciar</button>
 					</div>
 				</div>
 			</div>
@@ -55,12 +56,12 @@
 			<div class="modal-dialog" role="document">
 				<div class="modal-content" style="background-color: transparent;">
 					<div class="modal-body modalpopup" id="bodymodal2">
-						
+
 					</div>
 				</div>
 			</div>
 		</div>
-		<div id="content">
+		<div id="content" class="justContent">
 			<!-- Button trigger modal -->
 			<center>
 			<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
@@ -69,11 +70,11 @@
 			<button type="button" class="btn btn-primary" onclick="cambiarConstante();">
 			lanzar
 			</button>
-			</center>			
+			</center>
 			<div id="question-box"><p id="the-question"></p></div>
 			<div id="answer-box">
 				<ul>
-					<li class="answer">A: <span id="first-answer"></span></li>
+					<li class="answer" id="aja">A: <span id="first-answer"></span></li>
 					<li class="answer">B: <span id="second-answer"></span></li>
 					<li class="answer">C: <span id="third-answer"></span></li>
 					<li class="answer">D: <span id="fourth-answer"></span></li>
@@ -84,6 +85,7 @@
 				<option value="2">Grupo B</option>
 			</select>
 		</div>
+
 		<div class="results-container">
 			<div class="results">
 				<h1>Resultados!</h1>
@@ -91,15 +93,16 @@
 			</div>
 		</div>
 		<footer id="footer">
-			<p>Just another excercise in JavaScript.</p>
+			<p>Powered by Cristofer5248	.</p>
 		</footer>
-		
-		
+
+
 		<script  src="js/index.js"></script>
 		<!--<script type="text/javascript" src="js/jquery-3.4.1.js"></script>-->
 
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-		
+<img src="img/logo.png" alt="aqui deberia salir el logo" id="logo" style="">
 	</body>
+
 </html>
