@@ -285,6 +285,7 @@ function showTheResults() {
 
   // Display the results.
   document.getElementsByClassName("results-container")[0].classList.add("display");
+  ramdomGifCongrant();
 }
 
 //Let's start!
@@ -360,8 +361,28 @@ function ramdomGifBad(){
   var imgtag ="<img src='gifs/bad/"+gifIndex+".gif' alt='win'>";
   $(".modalpopup").append(imgtag);
 }
-function hideCounter(){
-  var countertag = document.getElementsByClassName("score")[0].style.display="none";
-
+function ramdomGifCongrant(){
+  var gifIndex = Math.floor(Math.random()*2)+1;
+  var imgtag ="<center><img src='gifs/congratulation/"+gifIndex+".gif' alt='win'></center>";
+  console.log(imgtag);
+  $(".result-text").append(imgtag);
 
 }
+function hideCounter(){
+  var countertag = document.getElementsByClassName("score")[0].style.display="none";
+}
+
+var json = (function () {
+    var json = null;
+    $.ajax({
+        // 'async': false,
+        // 'global': false,
+        'url': 'json/example.json',
+        'dataType': "json",
+        'success': function (data) {
+            json = data;
+        }
+    });
+    return json;
+})();
+console.log(JSON.stringify(json));
