@@ -106,7 +106,7 @@ border-color: silver;
   margin-left: auto;
 }
 
-#score-counter {
+#score-counter, #score-counter2 {
   font-size: 2.5em;
 
 }
@@ -152,7 +152,7 @@ overflow:hidden;
 }
 
 .correct,
-#num-correct {
+#num-correct, #num-correct2 {
   color: #00A550;
 }
 

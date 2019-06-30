@@ -25,7 +25,9 @@
 				Compazitos Review's Time!
 			</div>
 			<div class="score">
-				<p id="score-counter">0</p>
+				<p id="score-counter" onclick="hideCounter();">0</p>
+				<p class="points">Puntos</p>
+				<p id="score-counter2" onclick="hideCounter();">0</p>
 				<p class="points">Puntos</p>
 			</div>
 		</header>
@@ -61,14 +63,14 @@
 		</div>
 		<div id="content" class="justContent">
 			<!-- Button trigger modal -->
-			<center>
-			<button type="button" class="start-btn btn-retrostyle" data-toggle="modal" data-target="#myModal">
-			Iniciar
+
+			<button type="button" class="start-btn btn-retrostyle" style="font-size:10px" data-toggle="modal" data-target="#myModal">
+			N° preguntas
 			</button>
-			<button type="button" class="start-btn btn-retrostyle" onclick="cambiarConstante();">
-			lanzar
+			<button type="button" class="start-btn btn-retrostyle" style="float:center" onclick="cambiarConstante();">
+			Start
 			</button>
-			</center>
+
 			<div id="question-box"><p id="the-question"></p></div>
 			<div id="answer-box">
 				<ul>
@@ -87,7 +89,12 @@
 		<div class="results-container">
 			<div class="results">
 				<h1>Resultados!</h1>
-				<div class="result-text"><p>Hemos finalizado, Fueron un total de : <span id="num-total">0</span> preguntas respondidas correctamente, Equipo A : <span id="num-correct">0</span> preguntas correctas, Equipo B: <span id="num-correct2">0</span> preguntas correctas, Respuestas incorrectas en total: <span id="num-wrong">0</span>!</div>
+				<div class="result-text">
+					<center>
+					<img src="gifs/congratulation/1.gif" alt="should show gif">
+				</center>
+					<p>Hemos finalizado, Fueron un total de : <span id="num-total">0</span> preguntas respondidas correctamente <span id="num-total">0</span><br> Equipo A : <span id="num-correct">0</span> preguntas correctas<br> Equipo B: <span id="num-correct2">0</span> preguntas correctas <br>Respuestas incorrectas en total: <span id="num-wrong">0</span>!
+					</div>
 			</div>
 		</div>
 		<footer id="footer">

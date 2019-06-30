@@ -117,7 +117,7 @@ function quizQuestions() {
     d: "Familiar.",
     answer: "b" });
 
-  
+
 }
 
 // Get the containers.
@@ -127,6 +127,7 @@ answerB = document.getElementById("second-answer"),
 answerC = document.getElementById("third-answer"),
 answerD = document.getElementById("fourth-answer"),
 scoreCounter = document.getElementById("score-counter");
+scoreCounter2 = document.getElementById("score-counter2");
 
 // Add question keys to the quiz sequence array.
 function determineSequence() {
@@ -214,22 +215,20 @@ function checkTheAnswer(parameter1) {
 
   if (givenAnswer === correctAnswer) {
     //aqui
-    alert(conceptName);
+    // alert(conceptName);
         if(conceptName==1){
-          mySound.play();  
-          ramdomGif();
-          showpopupCorrect();        
-          
     quizStats.correct++;
   }
   else{
     quizStats.correct2++;
-    
+
   }
-    
+    mySound.play();
+    ramdomGif();
+    showpopupCorrect();
     this.classList.add("correct");
   } else
-  { 
+  {
     ramdomGifBad();
     showpopupCorrect();
     soundIncorrect.play();
@@ -239,10 +238,11 @@ function checkTheAnswer(parameter1) {
 
   // Update the counter.
   scoreCounter.textContent = quizStats.correct;
+  scoreCounter2.textContent = quizStats.correct2;
 
   // Check if max num of questions has been reached.
   //limitQ = $('#msg').html($('input:textbox').val());
-  
+
   if (quizStats.counter < NUMQUESTIONS) {
     setTimeout(clearClasses, 2000);
     setTimeout(getNextQuestion, 2000);
@@ -269,11 +269,13 @@ function showTheResults() {
   numWrong = document.getElementById("num-wrong"),
   numTotal = document.getElementById("num-total");
 
+
   // Get the results.
   let correct = quizStats.correct,
   correct2 = quizStats.correct2,
   wrong = quizStats.wrong,
   total = NUMQUESTIONS;
+
 
   // Print the results.
   numCorrect.textContent = correct;
@@ -288,7 +290,7 @@ function showTheResults() {
 //Let's start!
 
 $(document).ready(function($) {
- 
+
 // $('#myModal2').modal('show');
 });
 
@@ -305,7 +307,7 @@ function sound(src) {
     }
     this.stop = function(){
         this.sound.pause();
-    }    
+    }
 }
 function sound2(src) {
     this.sound = document.createElement("audio");
@@ -319,10 +321,10 @@ function sound2(src) {
     }
     this.stop = function(){
         this.sound.pause();
-    }    
+    }
 }
 
-function iniciarwe() { 
+function iniciarwe() {
   quizQuestions();
   determineSequence();
   getNextQuestion();
@@ -334,6 +336,7 @@ function cambiarConstante(){
 NUMQUESTIONS = document.getElementById("limitq").value;
 console.log("valor: "+NUMQUESTIONS);
 iniciarwe();
+$('#myModal').modal('hide');
 };
 
 function showpopupCorrect(){
@@ -344,16 +347,21 @@ function showpopupCorrect(){
 }
 
 function ramdomGif(){
-  
+
   $(".modalpopup").html("");
   var gifIndex = Math.floor(Math.random()*2)+1;
-  var imgtag ="<img src='gifs/"+gifIndex+".gif' alt='win'>";  
+  var imgtag ="<img src='gifs/"+gifIndex+".gif' alt='win'>";
   $(".modalpopup").append(imgtag);
 }
 function ramdomGifBad(){
-  
+
   $(".modalpopup").html("");
   var gifIndex = Math.floor(Math.random()*2)+1;
-  var imgtag ="<img src='gifs/bad/"+gifIndex+".gif' alt='win'>";  
+  var imgtag ="<img src='gifs/bad/"+gifIndex+".gif' alt='win'>";
   $(".modalpopup").append(imgtag);
+}
+function hideCounter(){
+  var countertag = document.getElementsByClassName("score")[0].style.display="none";
+
+
 }
