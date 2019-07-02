@@ -5,6 +5,8 @@ var mySound;
 mySound = new sound("sound/correct_mario.mp3");
 var soundIncorrect;
 soundIncorrect = new sound("sound/incorrect_mario.mp3");
+var questionsMap2 = new Map();
+var ultimavar=0;
 //esta es la contante que no puedo cambiar en todo el ciclo de ejecucion
 
 
@@ -38,67 +40,67 @@ let quizStats = {
 function quizQuestions() {
 
   questionsMap.set(1, {
-    question: "¿Quien fue Hagar?",
-    a: "Una egipcia.",
-    b: "Un egipcio.",
-    c: "Amigo de Abraham.",
-    d: "Ninguna.",
+    question: "¿Que regalo nos dio Dios para que podamos vivir en santidad?",
+    a: "Jesus.",
+    b: "Maria.",
+    c: "A los profetas.",
+    d: "La biblia.",
     answer: "a" });
 
   questionsMap.set(2, {
-    question: "¿Que hizo Hagar con el niño?",
-    a: "Lo dejo en el rio nilo.",
-    b: "Lo dejo solo en la casa.",
-    c: "Lo vendio.",
-    d: "Lo un lugar a distancia de un tiro con arco.",
+    question: "¿Cual fue el sacrificio que hizo Dios para que podamos vivir en santidad?",
+    a: "Andar predicando.",
+    b: "Hacer milagros.",
+    c: "Ayunar.",
+    d: "Morir en la cruz por nuestros pecados.",
     answer: "d" });
 
   questionsMap.set(3, {
-    question: "¿Que hizo la mama de moises con el?",
-    a: "Lo vendio a los egipcios.",
-    b: "Lo oculto y lo solto en el rio nilo.",
-    c: "Lo cuido hasta que crecio fuerte.",
-    d: "Ninguna.",
+    question: "¿Que palabra es sinonimo de la palabra santo?",
+    a: "Egoista.",
+    b: "Libre de pecado.",
+    c: "Trabajador.",
+    d: "Malo.",
     answer: "b" });
 
   questionsMap.set(4, {
-    question: "¿Cual de estos fue un milagro de Moises?",
-    a: "Abrió el mar.",
-    b: "Salvar a muchos con el arca.",
-    c: "Sano a un ciego.",
-    d: "Ninguno.",
+    question: "¿Cual de los siguientes versiculos habla de la bondad de Dios?",
+    a: "Salmo 145:9.",
+    b: "Salmos 1:9.",
+    c: "Proverbios 17:9.",
+    d: "Colosences 32:1.",
     answer: "a" });
 
   questionsMap.set(5, {
-    question: "¿Cual fue el regalo que la mama de moises le daba cada año?",
-    a: "Dinero.",
-    b: "Ninguna.",
-    c: "Nintendo switch.",
-    d: "Juguetes.",
+    question: "¿Bueno es Jehová para con todos",
+    a: "Y por siempre su amor.",
+    b: "Y sus misericordias sobre todas sus obras.",
+    c: "Y su bondad para siempre.",
+    d: "Y su amor es eterno.",
     answer: "b" });
 
   questionsMap.set(6, {
-    question: "¿Que paso con el bebe cuando dos madres querian un bebe😮? (1reyes3:26)",
-    a: "No se le dio a nadie.",
-    b: "El rey decidio dividirlo.",
-    c: "Lee Towers.",
-    d: "Tommy Lee.",
+    question: "¿Donde manifiesta Dios su bondad?",
+    a: "Amigos.",
+    b: "En todas partes.",
+    c: "Pastores.",
+    d: "El mar.",
     answer: "b" });
 
   questionsMap.set(7, {
-    question: "¿Cual de estos Dios no nos manda ha hacer?",
-    a: "Honrar.",
-    b: "Bendecir.",
-    c: "Relagar dinero.",
-    d: "Amar.",
+    question: "¿Cuando Dios bueno?",
+    a: "Cuando me da lo que quiero.",
+    b: "Cuando no me da lo que quiere.",
+    c: "Todas.",
+    d: "Cuando doy mi ofrenda.",
     answer: "c" });
 
   questionsMap.set(8, {
-    question: "Dios dice que somos ___  y ___ del espiritu santo",
-    a: "Personas y siervos.",
-    b: "Amigos y hermanos.",
-    c: "Comprados y bendecidos.",
-    d: "templo y morada.",
+    question: "Que debemos hacer por la inmensa bondad de Dios",
+    a: "Jugar.",
+    b: "Comer.",
+    c: "Descansar.",
+    d: "Celebrar.",
     answer: "d" });
 
   questionsMap.set(9, {
@@ -110,13 +112,60 @@ function quizQuestions() {
     answer: "a" });
 
   questionsMap.set(10, {
-    question: "Sometase pues  a toda Romanos13:1-2?",
-    a: "Persona.",
-    b: "Autoridad.",
-    c: "Pastor.",
-    d: "Familiar.",
+    question: "Salmos 17:7 Muestra tus maravillosas misericordias",
+    a: " tú que ayudas al justo.",
+    b: " tú que salvas a los que se refugian a tu diestra.",
+    c: " tú que me cuidas en la tormenta.",
+    d: " Oh jehova.",
+    answer: "b" });
+//gerson
+  questionsMap.set(11, {
+    question: "Formas de mostrar el amor de Dios a los demas",
+    a: " Jugando juntos, no perdonando, apoyar.",
+    b: " Apoyar, predicando, hacer trampa.",
+    c: " Perdonando, dando consejos, predicando.",
+    d: " Perdonando, copiar en clases, predicando.",
+    answer: "c" });
+
+  questionsMap.set(12, {
+    question: "En que versiculo se me fue dicho que somos hijos de Dios",
+    a: " 1 Juan 3:3.",
+    b: " 2 Juan 3:1.",
+    c: " 1 Juan 3:1.",
+    d: " Proverbios 3:1.",
+    answer: "c" });
+
+  questionsMap.set(13, {
+    question: "Que cual de estas opciones no debo honrar a mi padre?",
+    a: " Me abandona.",
+    b: " Ninguna.",
+    c: " Tengo padrastro.",
+    d: " Nunca lo conoci.",
     answer: "b" });
 
+    questionsMap.set(14, {
+      question: "Que aprendiste de parte de Dios del video sobre el padre visto en el salon?",
+      a: "El papa mostro todas las cualidades de un buen padre.",
+      b: " El papa estudio mucho para tener su puesto trabajo.",
+      c: " El ventilador no le funciono.",
+      d: " El papa es mal padre.",
+      answer: "a" });
+
+    questionsMap.set(15, {
+        question: "Las cualidad de un padre ejemplar como Dios vistas en clases son?",
+        a: "Consejero, cree en nosotros, fiel, misericordioso.",
+        b: "Fiestero, Feliz, Amable, fiel.",
+        c: "Consejero, Feliz, Amable, fiel.",
+        d: "Misericordioso, Feliz, Amable, fiel.",
+        answer: "a" });
+
+        questionsMap.set(16, {
+            question: "Cuales son los deberes de un hijo terrenal?",
+            a: "Honrar, no obedecer, menospreciar.",
+            b: "Menospreciar, Honrar, tener actitud de respeto.",
+            c: "Menospreciar, No obedecer, tener actitud de respeto.",
+            d: "No Menospreciar, Honrar, tener actitud de respeto.",
+            answer: "d" });
 
 }
 
@@ -292,7 +341,8 @@ function showTheResults() {
 
 $(document).ready(function($) {
 
-// $('#myModal2').modal('show');
+mifuncionnoob();
+
 });
 
 
@@ -372,17 +422,52 @@ function hideCounter(){
   var countertag = document.getElementsByClassName("score")[0].style.display="none";
 }
 
-var json = (function () {
-    var json = null;
-    $.ajax({
-        // 'async': false,
-        // 'global': false,
-        'url': 'json/example.json',
-        'dataType': "json",
-        'success': function (data) {
-            json = data;
-        }
-    });
-    return json;
-})();
-console.log(JSON.stringify(json));
+
+
+// var myInit = {  method:'GET',
+//                 headers:{
+//                     'Content-Type':'application/json'
+//                 },
+//                 mode:'cors',
+//                 cache:'default'
+//               };
+// }
+
+function mifuncionnoob(){
+let myRequest = new Request("json/example.json");
+var myjson;
+
+fetch(myRequest)
+  .then(function(resp){
+    return resp.json();
+})
+.then(function(data){
+  myjson = data;
+
+  var myJSON = JSON.stringify(myjson[0].question);
+  var myJSON1 = JSON.stringify(myjson[0].a);
+  var myJSON2 = JSON.stringify(myjson[0].b);
+  var myJSON3 = JSON.stringify(myjson[0].c);
+  var myJSON4 = JSON.stringify(myjson[0].d);
+  var myJSON5 = JSON.stringify(myjson[0].answer);
+
+  document.getElementById("footer").innerHTML = myJSON;
+ultimavar=2;
+  questionsMap2.set(1, {
+    question: myJSON,
+    a: myJSON1,
+    b: myJSON2,
+    c: myJSON3,
+    d: myJSON4,
+    answer: myJSON5 });
+});
+let questionsMap3 = new Map();
+questionsMap3.set(1, {
+  question: "¿Que regalo nos dio Dios para que podamos vivir en santidad?",
+  a: "Jesus.",
+  b: "Maria.",
+  c: "A los profetas.",
+  d: "La biblia.",
+  answer: "a" });
+console.log(ultimavar);
+}
