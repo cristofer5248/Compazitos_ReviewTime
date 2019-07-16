@@ -353,7 +353,7 @@ function showTheResults() {
 
 $(document).ready(function($) {
 
-//mifuncionnoob();
+mifuncionnoob();
 
 });
 

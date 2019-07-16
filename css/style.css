@@ -209,7 +209,7 @@ overflow:hidden;
   position: absolute;
   height: auto;
   z-index: 0;
-bottom: 0;
+  bottom: 0;
   animation-direction: alternate;
   animation-iteration-count: infinite;
   -moz-animation: bouncem 3s infinite;
