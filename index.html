@@ -10,6 +10,7 @@
 
 		<link rel="stylesheet" href="css/style.css">
 		<link rel="stylesheet" href="css/retrobutton.css">
+		<link rel="stylesheet" href="css/animate.css">
 		<script type="text/javascript" src="js/jquery-3.4.1.js"></script>
 		<!--<script type="text/javascript" src="js/r.js"></script>-->
 
@@ -19,16 +20,19 @@
 		<header id="header">
 
 			<div class="logo">
+
 				<img class="logoreview" src="img/review.png" alt="logo review">
 			</div>
 			<div class="threeD">
 				Compazitos Review's Time!
 			</div>
 			<div class="score">
-				<p id="score-counter" onclick="hideCounter();">0</p>
 				<p class="points">Puntos</p>
-				<p id="score-counter2" onclick="hideCounter();">0</p>
-				<p class="points">Puntos</p>
+
+				<h4 id="score-counter" onclick="hideCounter();">0</h4>
+
+				<h4 id="score-counter2" onclick="hideCounter();">0</h4>
+
 			</div>
 		</header>
 		<!-- Modal -->
@@ -61,7 +65,7 @@
 				</div>
 			</div>
 		</div>
-		<div id="content" class="justContent">
+		<div id="content" class="justContent" onkeydown="keyeventabcd(event);" tabindex="0">
 			<!-- Button trigger modal -->
 
 			<button type="button" class="start-btn btn-retrostyle" style="font-size:10px" data-toggle="modal" data-target="#myModal">
@@ -74,10 +78,10 @@
 			<div id="question-box"><p id="the-question"></p></div>
 			<div id="answer-box">
 				<ul>
-					<li class="answer" id="aja">A: <span id="first-answer"></span></li>
-					<li class="answer">B: <span id="second-answer"></span></li>
-					<li class="answer">C: <span id="third-answer"></span></li>
-					<li class="answer">D: <span id="fourth-answer"></span></li>
+					<li class="answer" id="aja" onmouseover="spanvisible('first-answer');">A: <span id="first-answer"></span></li>
+					<li class="answer" onmouseover="spanvisible('second-answer');">B: <span id="second-answer"></span></li>
+					<li class="answer" onmouseover="spanvisible('third-answer');">C: <span id="third-answer"></span></li>
+					<li class="answer" onmouseover="spanvisible('fourth-answer');">D: <span id="fourth-answer"></span></li>
 				</ul>
 			</div>
 			<select id="teamS" class="custom-select mr-sm-2">
@@ -100,12 +104,13 @@
 
 
 		<script  src="js/index.js"></script>
+		<script  src="js/style.js"></script>
 		<!-- <script  src="js/retrobutton.js"></script> -->
 		<!--<script type="text/javascript" src="js/jquery-3.4.1.js"></script>-->
 
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-<img src="img/logo.png" alt="aqui deberia salir el logo" id="logo" style="">
+<img src="img/logo.png" class="animatedrocket" alt="aqui deberia salir el logo" id="logo" style="">
 	</body>
 
 </html>

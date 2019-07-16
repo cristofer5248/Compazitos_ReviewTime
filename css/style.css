@@ -28,7 +28,7 @@ body {
 body,
 header {
   display: flex;
-  padding-bottom: 45px;
+  padding-bottom: 20px;
   /* justify-content: space-between; */
 
   /* esta parte hace que justifique el espacio entre el header y body */
@@ -107,7 +107,7 @@ border-color: silver;
 }
 
 #score-counter, #score-counter2 {
-  font-size: 2.5em;
+  /* font-size: 2.5em; */
 
 }
 
@@ -133,7 +133,9 @@ overflow:hidden;
   cursor: pointer;
   margin-left: 1em;
   transition: 0.1s;
+  visibility: hidden;
 }
+
 
 .answer {
   transition: all .25s ease-in-out;
@@ -207,13 +209,19 @@ overflow:hidden;
   position: absolute;
   height: auto;
   z-index: 0;
-  animation: bounce 0.8s;
+bottom: 0;
   animation-direction: alternate;
   animation-iteration-count: infinite;
+  -moz-animation: bouncem 3s infinite;
+  animation: bouncem 3s infinite;
 }
-@keyframes bounce {
-  0% { transform: translateY(0); }
-  100% { transform: translateY(-50px); }
+@keyframes bouncem {
+  0%, 100% {
+    bottom: 0;
+  }
+  50% {
+    bottom: 100px;
+  }
 }
 .logoreview{
   width: 100px;
@@ -249,4 +257,8 @@ overflow:hidden;
 .btn-retrostyle{
 font-size: 15pt;
 font-family: 'Press Start 2p';
+}
+
+.answer-box span{
+
 }

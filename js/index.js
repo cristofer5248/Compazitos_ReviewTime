@@ -7,6 +7,7 @@ var soundIncorrect;
 soundIncorrect = new sound("sound/incorrect_mario.mp3");
 var questionsMap2 = new Map();
 var ultimavar=0;
+// var animation='<button type="button" class="btn btn-secondary" data-dismiss="myModal2">Close</button>';
 //esta es la contante que no puedo cambiar en todo el ciclo de ejecucion
 
 
@@ -227,6 +228,11 @@ function getNextQuestion() {
   question = questionsMap.get(qn).question;
 
   // Print the questions.
+  var lquestion = question.length;
+
+  if(lquestion>70){
+    reduceFontSize();
+  }
   questionContainer.textContent = question;
   answerA.textContent = a;
   answerB.textContent = b;
@@ -278,13 +284,19 @@ function checkTheAnswer(parameter1) {
     this.classList.add("correct");
   } else
   {
+    if(conceptName==1){
+    quizStats.correct2++;
+  }
+  else{
+    quizStats.correct++;
+  }
     ramdomGifBad();
     showpopupCorrect();
     soundIncorrect.play();
     quizStats.wrong++;
     this.classList.add("wrong");
   }
-
+hidequestion();
   // Update the counter.
   scoreCounter.textContent = quizStats.correct;
   scoreCounter2.textContent = quizStats.correct2;
@@ -341,7 +353,7 @@ function showTheResults() {
 
 $(document).ready(function($) {
 
-mifuncionnoob();
+//mifuncionnoob();
 
 });
 
@@ -392,34 +404,69 @@ $('#myModal').modal('hide');
 
 function showpopupCorrect(){
   $('#myModal2').modal('show');
-      setTimeout(function() {
-       $('#myModal2').modal('hide');
-        }, 3000);
+      // setTimeout(function() {
+      //  $('#myModal2').modal('hide');
+      //   }, 3000); si queremos que desaparesca con el tiempo
+
+         $('#myModal2').modal('hide');
+
 }
 
 function ramdomGif(){
 
   $(".modalpopup").html("");
   var gifIndex = Math.floor(Math.random()*2)+1;
-  var imgtag ="<img src='gifs/"+gifIndex+".gif' alt='win'>";
+  var text1= '<center><h1 class="animated infinite bounceInLeft" style="color: green; font-size: 3.0em;">Excelente 1+</h1></center>';
+  var imgtag ="<img src='gifs/"+gifIndex+".gif' alt='win' onclick='hidemodal()'>"+text1;
+
+  // imgtag+=closebutton;
   $(".modalpopup").append(imgtag);
 }
 function ramdomGifBad(){
 
   $(".modalpopup").html("");
   var gifIndex = Math.floor(Math.random()*2)+1;
-  var imgtag ="<img src='gifs/bad/"+gifIndex+".gif' alt='win'>";
+  var text1= '<center><h1 id="badpoint" class="animated infinite flash" style="color: red; font-size: 2.0em; font-family:">Punto al otro equipo😭➡️+1</h1></center>';
+  var imgtag ="<img src='gifs/bad/"+gifIndex+".gif' alt='win' onclick='hidemodal()'>"+text1;
   $(".modalpopup").append(imgtag);
+  animateDelete();
 }
 function ramdomGifCongrant(){
   var gifIndex = Math.floor(Math.random()*2)+1;
   var imgtag ="<center><img src='gifs/congratulation/"+gifIndex+".gif' alt='win'></center>";
-  console.log(imgtag);
+
   $(".result-text").append(imgtag);
 
 }
 function hideCounter(){
   var countertag = document.getElementsByClassName("score")[0].style.display="none";
+}
+
+function hidequestion(){
+  document.getElementById('first-answer').style.visibility="hidden";
+  document.getElementById('second-answer').style.visibility="hidden";
+  document.getElementById('third-answer').style.visibility="hidden";
+  document.getElementById('fourth-answer').style.visibility="hidden";
+}
+function reduceFontSize(){
+  document.getElementById('the-question').style.fontSize='x-large';
+}
+
+function animateDelete(){
+  setTimeout(function() {
+    document.getElementById('badpoint').className="animated hinge";
+    }, 3000);
+}
+function keyeventabcd(event){
+  var key1 = event.keyCode;
+  if(key1==49){
+    document.getElementById('teamS').selectedIndex="0";
+    alert('Grupo A selecionado')
+  }
+  else if(key1==50){
+    document.getElementById('teamS').selectedIndex="1";
+    alert('Grupo B selecionado')
+  }
 }
 
 
