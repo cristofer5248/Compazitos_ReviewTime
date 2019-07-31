@@ -2,21 +2,23 @@
 <html lang="en" >
 	<head>
 		<meta charset="UTF-8">
-		<title>Compazitos Review Timexx!</title>
+		<title>Compazitos Review Time!</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link href="https://fonts.googleapis.com/css?family=Merriweather|Open+Sans:700,800" rel="stylesheet">
 		<link rel="stylesheet" href="css/normalize.min.css">
 		<link rel="stylesheet" href="css/bootstrap.min.css">
 
 		<link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" href="css/effects.css">
 		<link rel="stylesheet" href="css/retrobutton.css">
 		<link rel="stylesheet" href="css/animate.css">
 		<script type="text/javascript" src="js/jquery-3.4.1.js"></script>
 		<!--<script type="text/javascript" src="js/r.js"></script>-->
 
-
 	</head>
 	<body>
+		<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+		<link rel="icon" href="img/favicon.ico" type="image/x-icon">
 		<header id="header">
 
 			<div class="logo">
@@ -56,6 +58,25 @@
 				</div>
 			</div>
 		</div>
+		<div class="modal fade" id="myModal3" role="dialog">
+			<div class="modal-dialog modal-lg">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h4 class="modal-title" id="exampleModalLongTitle" style="color: black">Ingreso de preguntas</h4>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<div class="modal-body">
+						<textarea id="input" class="fullweight" placeholder="" name="txtarea" id="txtarea"></textarea><br></br>
+						<button id="go" class="start-btn btn-retrostyle" style="font-size:10px;">Enviar</button>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="start-btn btn-retrostyle" data-dismiss="modal">Cerrar</button>
+					</div>
+				</div>
+			</div>
+		</div>
 		<div class="modal fade" id="myModal2" role="dialog">
 			<div class="modal-dialog" role="document">
 				<div class="modal-content" style="background-color: transparent;">
@@ -70,6 +91,9 @@
 
 			<button type="button" class="start-btn btn-retrostyle" style="font-size:10px" data-toggle="modal" data-target="#myModal">
 			N° preguntas
+			</button>
+			<button type="button" class="start-btn btn-retrostyle" style="font-size:10px" data-toggle="modal" data-target="#myModal3">
+			Ingresar preguntas
 			</button>
 			<input type="checkbox" id="customq"> Custom Question?<br>
 			<!--<button type="button" class="start-btn btn-retrostyle" style="float:center" onclick="cambiarConstante();">

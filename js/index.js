@@ -1,4 +1,4 @@
-//Number of questions. Max=52.
+  //Number of questions. Max=52.
 var NUMQUESTIONS = 2;
 var mySound;
 mySound = new sound("sound/correct_mario.mp3");
@@ -67,118 +67,91 @@ console.log("(ESTOY AJUERA)Podemos ver e dato"+JSON.stringify(myjson1[0].questio
 
 function quizQuestions() {
 questionsMap.set(1, {
-question: "¿Que regalo nos dio Dios para que podamos vivir en santidad?",
-a: "Jesus.",
-b: "Maria.",
-c: "A los profetas.",
-d: "La biblia.",
+question: "¿Como se llamaba la parte del tabernaculo donde se entraba solo una vez al año?",
+a: "Lugar Santisimo.",
+b: "Templo Sagrado.",
+c: "Templo de Dios.",
+d: "Casa de Dios.",
 answer: "a" });
 questionsMap.set(2, {
-question: "¿Cual fue el sacrificio que hizo Dios para que podamos vivir en santidad?",
-a: "Andar predicando.",
-b: "Hacer milagros.",
-c: "Ayunar.",
-d: "Morir en la cruz por nuestros pecados.",
+question: "¿Quienes podria entrar al lugar santimo?",
+a: "El pueblo.",
+b: "Pastores.",
+c: "Reyes.",
+d: "Sumosacerdote.",
 answer: "d" });
 questionsMap.set(3, {
-question: "¿Que palabra es sinonimo de la palabra santo?",
-a: "Egoista.",
-b: "Libre de pecado.",
-c: "Trabajador.",
-d: "Malo.",
+question: "¿Que pasaba si Dios no recibia la ofrenda?",
+a: "Dejaba de ser Sumosacerdote.",
+b: "Caia al suelo sin vida.",
+c: "Solo regresaba.",
+d: "Debia seguir orando.",
 answer: "b" });
 questionsMap.set(4, {
-question: "¿Cual de los siguientes versiculos habla de la bondad de Dios?",
-a: "Salmo 145:9.",
-b: "Salmos 1:9.",
-c: "Proverbios 17:9.",
-d: "Colosences 32:1.",
+question: "¿Como se llamaba lo que el sumo Sumosacerdote llevaba en el pecho?",
+a: "Pectoral de justicia.",
+b: "La tabla de la ley.",
+c: "Pectoral del pacto.",
+d: "Pectoral de la ley.",
 answer: "a" });
 questionsMap.set(5, {
-question: "¿Bueno es Jehová para con todos",
-a: "Y por siempre su amor.",
-b: "Y sus misericordias sobre todas sus obras.",
-c: "Y su bondad para siempre.",
-d: "Y su amor es eterno.",
+question: "Que representaba el pectoral del Sumosacerdote",
+a: "Los frutos del espiritu.",
+b: "El pueblo de Dios.",
+c: "Las generaciones.",
+d: "Los mandamientos.",
 answer: "b" });
 questionsMap.set(6, {
-question: "¿Donde manifiesta Dios su bondad?",
-a: "Amigos.",
-b: "En todas partes.",
-c: "Pastores.",
-d: "El mar.",
+question: "¿Que representaba cada piedra y de que estaba hecha lo que tenia el Sumosacerdote en el pecho (piedras)?",
+a: "Las tribus y solo eran de colores.",
+b: "Las tribus, diferentes minerales.",
+c: "Los mandamientos, solo eran pintadas.",
+d: "Las generaciones y solo estaban pintadas.",
 answer: "b" });
 questionsMap.set(7, {
-question: "¿Cuando Dios bueno?",
-a: "Cuando me da lo que quiero.",
-b: "Cuando no me da lo que quiere.",
-c: "Todas.",
-d: "Cuando doy mi ofrenda.",
+question: "¿Cual de estas fue una clase en el salon?",
+a: "Mi Dios es fuerte.",
+b: "El que madruga Dios lo ayuda.",
+c: "Mi Dios es celoso.",
+d: "Dios omnipotente.",
 answer: "c" });
 questionsMap.set(8, {
-question: "Que debemos hacer por la inmensa bondad de Dios",
-a: "Jugar.",
-b: "Comer.",
-c: "Descansar.",
-d: "Celebrar.",
+question: "Porque Dios es celoso?",
+a: "Porque es un mandamiento.",
+b: "Porque creemos que el es asi.",
+c: "Lo dice el libro de Genesis.",
+d: "Porque el es fiel y los idolos nos pueden fallar.",
 answer: "d" });
 questionsMap.set(9, {
-question: "Cuales de estos no es un autoridad?",
-a: "Amigos.",
-b: "Presidente.",
-c: "Tios.",
-d: "Maestros.",
+question: "Cuales son las intrucciones para hacer un idolo?",
+a: "Buscar algo con lo que no puedas vivir y luego desesperarte por el.",
+b: "Buscar algo que no uses y luego, usarlo dos dias y cambiarlo",
+c: "Buscar algo con lo no podamos vivir y luego regalarlo.",
+d: "Buscar algo con lo que podamos vivir y luego no te desesperes por usarlo .",
 answer: "a" });
 questionsMap.set(10, {
-question: "Salmos 17:7 Muestra tus maravillosas misericordias",
-a: " tú que ayudas al justo.",
-b: " tú que salvas a los que se refugian a tu diestra.",
-c: " tú que me cuidas en la tormenta.",
-d: " Oh jehova.",
+question: "Porque Dios debe ser temido?",
+a: " No tiene miedo a nadie.",
+b: " Porque el es fiel y cumple sus promesas, bendiciones y maldiciones.",
+c: " Porque es poderoso.",
+d: " Porque lo dicen en exodo.",
 answer: "b" });
 //gerson
 questionsMap.set(11, {
-question: "Formas de mostrar el amor de Dios a los demas",
-a: " Jugando juntos, no perdonando, apoyar.",
-b: " Apoyar, predicando, hacer trampa.",
-c: " Perdonando, dando consejos, predicando.",
-d: " Perdonando, copiar en clases, predicando.",
+question: "Donde dice que Dios es temido?",
+a: " Malaquias 1:60.",
+b: " Proverbios 1:18.",
+c: " Malaquias 1:14.",
+d: " Genesis 2:5.",
 answer: "c" });
 questionsMap.set(12, {
-question: "En que versiculo se me fue dicho que somos hijos de Dios",
-a: " 1 Juan 3:3.",
-b: " 2 Juan 3:1.",
-c: " 1 Juan 3:1.",
-d: " Proverbios 3:1.",
+question: "En que historia biblica algiuen no le tuvo temor al poder de Dios",
+a: " Juan y Maria.",
+b: " Pedro y Jesus.",
+c: " Moises y faraon.",
+d: " Noe.",
 answer: "c" });
-questionsMap.set(13, {
-question: "Que cual de estas opciones no debo honrar a mi padre?",
-a: " Me abandona.",
-b: " Ninguna.",
-c: " Tengo padrastro.",
-d: " Nunca lo conoci.",
-answer: "b" });
-questionsMap.set(14, {
-question: "Que aprendiste de parte de Dios del video sobre el padre visto en el salon?",
-a: "El papa mostro todas las cualidades de un buen padre.",
-b: " El papa estudio mucho para tener su puesto trabajo.",
-c: " El ventilador no le funciono.",
-d: " El papa es mal padre.",
-answer: "a" });
-questionsMap.set(15, {
-question: "Las cualidad de un padre ejemplar como Dios vistas en clases son?",
-a: "Consejero, cree en nosotros, fiel, misericordioso.",
-b: "Fiestero, Feliz, Amable, fiel.",
-c: "Consejero, Feliz, Amable, fiel.",
-d: "Misericordioso, Feliz, Amable, fiel.",
-answer: "a" });
-questionsMap.set(16, {
-question: "Cuales son los deberes de un hijo terrenal?",
-a: "Honrar, no obedecer, menospreciar.",
-b: "Menospreciar, Honrar, tener actitud de respeto.",
-c: "Menospreciar, No obedecer, tener actitud de respeto.",
-d: "No Menospreciar, Honrar, tener actitud de respeto.",
-answer: "d" });
+
 }
 // Get the containers.
 let questionContainer = document.getElementById("the-question"),
@@ -272,6 +245,8 @@ quizStats.correct2++;
 }
 mySound.play();
 ramdomGif();
+//aqui
+
 showpopupCorrect();
 this.classList.add("correct");
 } else
@@ -301,6 +276,10 @@ setTimeout(getNextQuestion, 2000);
 // If so, stop the quiz.
 else {
 showTheResults();
+//desapecer
+setTimeout(function() {
+ $('#myModal2').modal('hide');
+  }, 3000);
 }
 }
 // Clear classes.
@@ -333,7 +312,7 @@ ramdomGifCongrant();
 }
 //Let's start!
 $(document).ready(function($) {
-  alert('paso 2: ready funciont')
+
 });
 
 function sound(src) {
@@ -419,11 +398,11 @@ function keyeventabcd(event){
 var key1 = event.keyCode;
 if(key1==49){
 document.getElementById('teamS').selectedIndex="0";
-alert('Grupo A selecionado')
+
 }
 else if(key1==50){
 document.getElementById('teamS').selectedIndex="1";
-alert('Grupo B selecionado')
+
 }
 }
 // var myInit = {  method:'GET',
@@ -437,7 +416,7 @@ alert('Grupo B selecionado')
 
 function iniciarwe() {
 var checkbox1 = document.getElementById("customq");
-checkbox1.checked ? mifuncionnoob() : quizQuestions();
+quizQuestions();
 
 // preguntas quemadas activar
 determineSequence();
@@ -446,3 +425,17 @@ getNextQuestion();
 addEventListeners();
 addDataAttributes();
 };
+
+$('#go').click(function() {
+  var lines = $('#input').val().split(/\n/);
+  var output = [];
+  var outputText = [];
+  for (var i = 0; i < lines.length; i++) {
+    // only push this line if it contains a non whitespace character.
+    if (/\S/.test(lines[i])) {
+      outputText.push('"' + $.trim(lines[i]) + '"');
+      output.push($.trim(lines[i]));
+    }
+  }
+  console.log(output);
+})
