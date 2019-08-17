@@ -1,141 +1,143 @@
 <!DOCTYPE html>
-<html lang="en" >
-	<head>
-		<meta charset="UTF-8">
-		<title>Compazitos Review Time!</title>
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link href="https://fonts.googleapis.com/css?family=Merriweather|Open+Sans:700,800" rel="stylesheet">
-		<link rel="stylesheet" href="css/normalize.min.css">
-		<link rel="stylesheet" href="css/bootstrap.min.css">
+<html lang="en">
 
-		<link rel="stylesheet" href="css/style.css">
-		<link rel="stylesheet" href="css/effects.css">
-		<link rel="stylesheet" href="css/retrobutton.css">
-		<link rel="stylesheet" href="css/animate.css">
-		<script type="text/javascript" src="js/jquery-3.4.1.js"></script>
-		<!--<script type="text/javascript" src="js/r.js"></script>-->
+<head>
+	<meta charset="UTF-8">
+	<title>Compazitos Review Time!</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="https://fonts.googleapis.com/css?family=Merriweather|Open+Sans:700,800" rel="stylesheet">
+	<link rel="stylesheet" href="css/normalize.min.css">
+	<link rel="stylesheet" href="css/bootstrap.min.css">
 
-	</head>
-	<body>
-		<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
-		<link rel="icon" href="img/favicon.ico" type="image/x-icon">
-		<header id="header">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/effects.css">
+	<link rel="stylesheet" href="css/retrobutton.css">
+	<link rel="stylesheet" href="css/animate.css">
+	<script type="text/javascript" src="js/jquery-3.4.1.js"></script>
+	<!--<script type="text/javascript" src="js/r.js"></script>-->
 
-			<div class="logo">
+</head>
 
-				<img class="logoreview" src="img/review.png" alt="logo review">
-			</div>
-			<div class="threeD">
-				Compazitos Review's Time!
-			</div>
-			<div class="score">
-				<p class="points">Puntos</p>
+<body>
+	<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+	<link rel="icon" href="img/favicon.ico" type="image/x-icon">
+	<header id="header">
 
-				<h4 id="score-counter" onclick="hideCounter();">0</h4>
+		<div class="logo">
 
-				<h4 id="score-counter2" onclick="hideCounter();">0</h4>
+			<img class="logoreview" src="img/review.png" alt="logo review">
+		</div>
+		<div class="threeD">
+			Compazitos Review's Time!
+		</div>
+		<div class="score">
+			<p class="points">Puntos</p>
 
-			</div>
-		</header>
-		<!-- Modal -->
-		<div class="modal fade" id="myModal" role="dialog">
-			<div class="modal-dialog" role="document">
-				<div class="modal-content">
-					<div class="modal-header">
-						<h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
-						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			<h4 id="score-counter" onclick="hideCounter();">0</h4>
+
+			<h4 id="score-counter2" onclick="hideCounter();">0</h4>
+
+		</div>
+	</header>
+	<!-- Modal -->
+	<div class="modal fade" id="myModal" role="dialog">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 						<span aria-hidden="true">&times;</span>
-						</button>
-					</div>
-					<div class="modal-body">
-						<label for="example1" style="color:black;"> N° de preguntas:</label>
-						<input class="form-control" id="limitq" id="nq" aria-describedby="emailHelp" placeholder="Ingrese un numero" type="number">
-					</div>
-					<div class="modal-footer">
-						<button type="button" class="start-btn btn-retrostyle" data-dismiss="modal">Cerrar</button>
-						<button id="enviar1" class="start-btn btn-retrostyle" onclick="cambiarConstante()">Start</button>
-					</div>
+					</button>
+				</div>
+				<div class="modal-body">
+					<label for="example1" style="color:black;"> N° de preguntas:</label>
+					<input class="form-control" id="limitq" id="nq" aria-describedby="emailHelp" placeholder="Ingrese un numero" type="number">
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="start-btn btn-retrostyle" data-dismiss="modal">Cerrar</button>
+					<button id="enviar1" class="start-btn btn-retrostyle" onclick="cambiarConstante()">Start</button>
 				</div>
 			</div>
 		</div>
-		<div class="modal fade" id="myModal3" role="dialog">
-			<div class="modal-dialog modal-lg">
-				<div class="modal-content">
-					<div class="modal-header">
-						<h4 class="modal-title" id="exampleModalLongTitle" style="color: black">Ingreso de preguntas</h4>
-						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+	</div>
+	<div class="modal fade" id="myModal3" role="dialog">
+		<div class="modal-dialog modal-lg">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h4 class="modal-title" id="exampleModalLongTitle" style="color: black">Ingreso de preguntas</h4>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 						<span aria-hidden="true">&times;</span>
-						</button>
-					</div>
-					<div class="modal-body">
-						<textarea id="input" class="fullweight" placeholder="" name="txtarea" id="txtarea"></textarea><br></br>
-						<button id="go" class="start-btn btn-retrostyle" style="font-size:10px;">Enviar</button>
-					</div>
-					<div class="modal-footer">
-						<button type="button" class="start-btn btn-retrostyle" data-dismiss="modal">Cerrar</button>
-					</div>
+					</button>
+				</div>
+				<div class="modal-body">
+					<textarea id="input" class="fullweight" placeholder="" name="txtarea" id="txtarea"></textarea><br></br>
+					<button id="go" class="start-btn btn-retrostyle" style="font-size:10px;">Enviar</button>
 				</div>
 			</div>
 		</div>
-		<div class="modal fade" id="myModal2" role="dialog">
-			<div class="modal-dialog" role="document">
-				<div class="modal-content" style="background-color: transparent;">
-					<div class="modal-body modalpopup" id="bodymodal2">
+	</div>
+	<div class="modal fade" id="myModal2" role="dialog">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content" style="background-color: transparent;">
+				<div class="modal-body modalpopup" id="bodymodal2">
 
-					</div>
 				</div>
 			</div>
 		</div>
-		<div id="content" class="justContent" onkeydown="keyeventabcd(event);" tabindex="0">
-			<!-- Button trigger modal -->
+	</div>
+	<div id="content" class="justContent" onkeydown="keyeventabcd(event);" tabindex="0">
+		<!-- Button trigger modal -->
 
-			<button type="button" class="start-btn btn-retrostyle" style="font-size:10px" data-toggle="modal" data-target="#myModal">
+		<button id="n_btn" type="button" class="start-btn btn-retrostyle" style="font-size:10px" data-toggle="modal" data-target="#myModal">
 			N° preguntas
-			</button>
-			<button type="button" class="start-btn btn-retrostyle" style="font-size:10px" data-toggle="modal" data-target="#myModal3">
+		</button>
+		<button id="i_btn" type="button" class="start-btn btn-retrostyle" style="font-size:10px; display: none;" data-toggle="modal" data-target="#myModal3">
 			Ingresar preguntas
-			</button>
-			<input type="checkbox" id="customq"> Custom Question?<br>
-			<!--<button type="button" class="start-btn btn-retrostyle" style="float:center" onclick="cambiarConstante();">
+		</button>
+		<input type="checkbox" id="customq" onclick="checkbox_action()"> Custom Question?<br>
+		<!--<button type="button" class="start-btn btn-retrostyle" style="float:center" onclick="cambiarConstante();">
 			Start
 			</button>-->
 
-			<div id="question-box"><p id="the-question"></p></div>
-			<div id="answer-box">
-				<ul>
-					<li class="answer" id="aja" onmouseover="spanvisible('first-answer');">A: <span id="first-answer"></span></li>
-					<li class="answer" onmouseover="spanvisible('second-answer');">B: <span id="second-answer"></span></li>
-					<li class="answer" onmouseover="spanvisible('third-answer');">C: <span id="third-answer"></span></li>
-					<li class="answer" onmouseover="spanvisible('fourth-answer');">D: <span id="fourth-answer"></span></li>
-				</ul>
-			</div>
-			<select id="teamS" class="custom-select mr-sm-2">
-				<option value="1">Grupo A</option>
-				<option value="2">Grupo B</option>
-			</select>
+		<div id="question-box">
+			<p id="the-question"></p>
 		</div>
+		<div id="answer-box">
+			<ul>
+				<li class="answer" id="aja" onmouseover="spanvisible('first-answer');">A: <span id="first-answer"></span></li>
+				<li class="answer" onmouseover="spanvisible('second-answer');">B: <span id="second-answer"></span></li>
+				<li class="answer" onmouseover="spanvisible('third-answer');">C: <span id="third-answer"></span></li>
+				<li class="answer" onmouseover="spanvisible('fourth-answer');">D: <span id="fourth-answer"></span></li>
+			</ul>
+		</div>
+		<select id="teamS" class="custom-select mr-sm-2">
+			<option value="1">Grupo A</option>
+			<option value="2">Grupo B</option>
+		</select>
+	</div>
 
-		<div class="results-container">
-			<div class="results">
-				<h1>Resultados!</h1>
-				<div class="result-text">
-					<p>Hemos finalizado, Fueron un total de : <span id="num-total">0</span> preguntas respondidas correctamente <span id="num-total">0</span><br> Equipo A : <span id="num-correct">0</span> preguntas correctas<br> Equipo B: <span id="num-correct2">0</span> preguntas correctas <br>Respuestas incorrectas en total: <span id="num-wrong">0</span>!
-					</div>
+	<div class="results-container">
+		<div class="results">
+			<h1>Resultados!</h1>
+			<div class="result-text">
+				<p>Hemos finalizado, Fueron un total de : <span id="num-total">0</span> preguntas respondidas correctamente <span id="num-total">0</span><br> Equipo A : <span id="num-correct">0</span> preguntas correctas<br> Equipo B: <span
+						id="num-correct2">0</span> preguntas correctas <br>Respuestas incorrectas en total: <span id="num-wrong">0</span>!
 			</div>
 		</div>
-		<footer id="footer">
-			<p>Powered by Cristofer5248	.</p>
-		</footer>
+	</div>
+	<footer id="footer">
+		<p>Powered by Cristofer5248 .</p>
+	</footer>
 
 
-		<script  src="js/index.js"></script>
-		<script  src="js/style.js"></script>
-		<!-- <script  src="js/retrobutton.js"></script> -->
-		<!--<script type="text/javascript" src="js/jquery-3.4.1.js"></script>-->
+	<script src="js/index.js"></script>
+	<script src="js/style.js"></script>
+	<!-- <script  src="js/retrobutton.js"></script> -->
+	<!--<script type="text/javascript" src="js/jquery-3.4.1.js"></script>-->
 
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-<img src="img/logo.png" class="animatedrocket" alt="aqui deberia salir el logo" id="logo" style="">
-	</body>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+	<img src="img/logo.png" class="animatedrocket" alt="aqui deberia salir el logo" id="logo" style="">
+</body>
 
 </html>

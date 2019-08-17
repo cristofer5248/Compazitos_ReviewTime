@@ -6,7 +6,7 @@
 @font-face {
   font-family: chalkFont;
   /* src: url("../font/SqueakyChalkSound.ttf"); */
-  src: url("../font/chalk2.ttf");
+  src: url("../font/PWChalk.ttf");
 }
 html,
 body {
@@ -130,17 +130,19 @@ overflow:hidden;
 }
 
 .answer span {
+  font-family:  chalkFont;
   cursor: pointer;
   margin-left: 1em;
   transition: 0.1s;
   visibility: hidden;
+  text-transform: uppercase;
 }
 
 
 .answer {
   transition: all .25s ease-in-out;
   font-family: chalkFont;
-  font-size: 1.5em;
+  font-size: 1.3em;
 
 
 
