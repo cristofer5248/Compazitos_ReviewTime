@@ -65,107 +65,7 @@
     console.log("(ESTOY AJUERA)Podemos ver e dato" + JSON.stringify(myjson1[0].question));
   }
 
-  function quizQuestions() {
-    questionsMap.set(1, {
-      question: "¿Como se llamaba la parte del tabernaculo donde se entraba solo una vez al año?",
-      a: "Lugar Santisimo.",
-      b: "Templo Sagrado.",
-      c: "Templo de Dios.",
-      d: "Casa de Dios.",
-      answer: "a"
-    });
-    questionsMap.set(2, {
-      question: "¿Quienes podria entrar al lugar santimo?",
-      a: "El pueblo.",
-      b: "Pastores.",
-      c: "Reyes.",
-      d: "Sumosacerdote.",
-      answer: "d"
-    });
-    questionsMap.set(3, {
-      question: "¿Que pasaba si Dios no recibia la ofrenda?",
-      a: "Dejaba de ser Sumosacerdote.",
-      b: "Caia al suelo sin vida.",
-      c: "Solo regresaba.",
-      d: "Debia seguir orando.",
-      answer: "b"
-    });
-    questionsMap.set(4, {
-      question: "¿Como se llamaba lo que el sumo Sumosacerdote llevaba en el pecho?",
-      a: "Pectoral de justicia.",
-      b: "La tabla de la ley.",
-      c: "Pectoral del pacto.",
-      d: "Pectoral de la ley.",
-      answer: "a"
-    });
-    questionsMap.set(5, {
-      question: "Que representaba el pectoral del Sumosacerdote",
-      a: "Los frutos del espiritu.",
-      b: "El pueblo de Dios.",
-      c: "Las generaciones.",
-      d: "Los mandamientos.",
-      answer: "b"
-    });
-    questionsMap.set(6, {
-      question: "¿Que representaba cada piedra y de que estaba hecha lo que tenia el Sumosacerdote en el pecho (piedras)?",
-      a: "Las tribus y solo eran de colores.",
-      b: "Las tribus, diferentes minerales.",
-      c: "Los mandamientos, solo eran pintadas.",
-      d: "Las generaciones y solo estaban pintadas.",
-      answer: "b"
-    });
-    questionsMap.set(7, {
-      question: "¿Cual de estas fue una clase en el salon?",
-      a: "Mi Dios es fuerte.",
-      b: "El que madruga Dios lo ayuda.",
-      c: "Mi Dios es celoso.",
-      d: "Dios omnipotente.",
-      answer: "c"
-    });
-    questionsMap.set(8, {
-      question: "Porque Dios es celoso?",
-      a: "Porque es un mandamiento.",
-      b: "Porque creemos que el es asi.",
-      c: "Lo dice el libro de Genesis.",
-      d: "Porque el es fiel y los idolos nos pueden fallar.",
-      answer: "d"
-    });
-    questionsMap.set(9, {
-      question: "Cuales son las intrucciones para hacer un idolo?",
-      a: "Buscar algo con lo que no puedas vivir y luego desesperarte por el.",
-      b: "Buscar algo que no uses y luego, usarlo dos dias y cambiarlo",
-      c: "Buscar algo con lo no podamos vivir y luego regalarlo.",
-      d: "Buscar algo con lo que podamos vivir y luego no te desesperes por usarlo .",
-      answer: "a"
-    });
-    questionsMap.set(10, {
-      question: "Porque Dios debe ser temido?",
-      a: " No tiene miedo a nadie.",
-      b: " Porque el es fiel y cumple sus promesas, bendiciones y maldiciones.",
-      c: " Porque es poderoso.",
-      d: " Porque lo dicen en exodo.",
-      answer: "b"
-    });
-    //gerson
-    questionsMap.set(11, {
-      question: "Donde dice que Dios es temido?",
-      a: " Malaquias 1:60.",
-      b: " Proverbios 1:18.",
-      c: " Malaquias 1:14.",
-      d: " Genesis 2:5.",
-      answer: "c"
-    });
-    questionsMap.set(12, {
-      question: "En que historia biblica algiuen no le tuvo temor al poder de Dios",
-      a: " Juan y Maria.",
-      b: " Pedro y Jesus.",
-      c: " Moises y faraon.",
-      d: " Noe.",
-      answer: "c"
-    });
-
-  }
-  // Get the containers.
+// Get the containers.
   let questionContainer = document.getElementById("the-question"),
     answerA = document.getElementById("first-answer"),
     answerB = document.getElementById("second-answer"),
@@ -444,18 +344,19 @@
     addDataAttributes();
   };
 
-  function checkbox_action(){
+  function checkbox_action() {
     var checkbox1 = document.getElementById("customq");
     checkbox1.checked ? desaparecerbtn1() : desaparecerbtn2();
   }
 
-  function desaparecerbtn1(){
-    document.getElementById("n_btn").style.display="none";
-    document.getElementById("i_btn").style.display="block";
+  function desaparecerbtn1() {
+    document.getElementById("n_btn").style.display = "none";
+    document.getElementById("i_btn").style.display = "block";
   }
-  function desaparecerbtn2(){
-    document.getElementById("i_btn").style.display="none";
-    document.getElementById("n_btn").style.display="block";
+
+  function desaparecerbtn2() {
+    document.getElementById("i_btn").style.display = "none";
+    document.getElementById("n_btn").style.display = "block";
   }
 
 
@@ -464,19 +365,20 @@
     var output = [];
     var outputText = [];
     var i_nq = 1;
+    var indexq_n=0;
     var divisible = lines.length % 6;
-    alert(divisible);
     if (divisible === 0) {
       console.log('es divisible');
 
-      for (var i = 0; i < lines.length; i++) {
-
-
-        while (i % 6 !== 0 || i === 0) {
+      var i = 0;
+      var j = 0;
+      while (i < lines.length) {
+        while (j < 6) {
           if (/\S/.test(lines[i])) {
             // only push this line if it contains a non whitespace character.
             output.push($.trim(lines[i]));
             i++;
+            j++;
           }
 
           questionsMap.set(i_nq, {
@@ -488,11 +390,20 @@
             answer: output[5]
           });
 
+
         }
+        output=[];
+        indexq_n = i_nq;
+        NUMQUESTIONS = i_nq;
         i_nq++;
+        j=0;
       }
     }
+    else{
+      alert('Las preguntas ingresadas no corresponden al formato correcto, porfavor volver a revisar');
+    }
+    alert('Se han registrado: '+indexq_n+" preguntas");
     console.log(output);
-    NUMQUESTIONS = 1;
+
     iniciarwe();
   })
