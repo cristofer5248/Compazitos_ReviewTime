@@ -334,8 +334,9 @@
   // }
 
   function iniciarwe() {
-    var checkbox1 = document.getElementById("customq");
-    checkbox1.checked ? console.log('iniciando') : quizQuestions();
+    // var checkbox1 = document.getElementById("customq");
+    // checkbox1.checked ? console.log('iniciando') : quizQuestions();
+
     // preguntas quemadas activar
     determineSequence();
 

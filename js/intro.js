@@ -429,11 +429,7 @@
         console.log(this._currentStep);
 //        AQUI ES DONDE PODES RASTREAR EL PASO QUE VA Y PONER TU FUNCION FAVORITA WE
         if (this._currentStep === 3) {
-            var btn3 = document.getElementById("butonsitoplus");
-            btn3.classList.remove('zmdi-plus');
-            btn3.classList.add('zmdi-border-color');
-            $('.card').toggleClass('active');
-            $('.abriteplease2').show();
+          $('#myModal3').modal('show');
 
         }
         if (typeof (this._introBeforeChangeCallback) !== 'undefined') {

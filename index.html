@@ -51,9 +51,10 @@
 					</button>
 				</div>
 				<div class="modal-body">
-					<textarea id="input" class="fullweight" placeholder="" name="txtarea" id="txtarea"></textarea><br></br>
+					<textarea id="input" class="fullweight" placeholder="" name="txtarea" id="txtarea" data-step="4" data-intro="Aqui pondran tus preguntas en el formato correcto para posteriormente ser ingresadas al test. El sistema detectara si el formato es incorrecto y la cantidad de preguntas que ingresaste. Puedes aprender mas del formato correcto aqui->"></textarea><br></br>
 
 					<button id="go" class="start-btn btn-retrostyle" style="font-size:10px;">Enviar</button>
+					<a data-step="5" data-intro="Aqui puedes dar clic para mostrar un ejempl del formato correcto de las preguntas" href="img/example.png" target="_blank">ver formato (click)</a>
 				</div>
 			</div>
 		</div>
@@ -69,10 +70,12 @@
 	</div>
 	<div id="content" class="justContent" onkeydown="keyeventabcd(event);" tabindex="0">
 		<!-- Button trigger modal -->
-		<button id="i_btn" type="button" class="start-btn btn-retrostyle" style="font-size:10px;" data-toggle="modal" data-target="#myModal3">
+		<button id="i_btn" type="button" class="start-btn btn-retrostyle" data-step="3" data-intro="Como pudo ver, inicialmente no hay preguntas y todo se encuentra vacio. Para dar inicio con el test debe dar clic aqui e ingresar las preguntas que posteriormente seran mostradas como fue señalado en el paso numero 1, estas apareceran invisibles para mejorar experiencia de desarrollo del mismo, y seran mostradas hasta que pose el cursor encima de cada literal. " style="font-size:10px;" data-toggle="modal" data-target="#myModal3">
 			Ingresar preguntas
 		</button>
-		<button onclick="javascript:introJs().start();">Iniciar</button>
+		<button type="button" class="btn btn-success" aria-label="Left Align" onclick="javascript:introJs().start();">?
+			<span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span>
+		</button>
 		<!-- <input type="checkbox" id="customq" onclick="checkbox_action()"> Custom Question?<br> -->
 		<!--<button type="button" class="start-btn btn-retrostyle" style="float:center" onclick="cambiarConstante();">
 			Start
@@ -81,7 +84,7 @@
 		<div id="question-box">
 			<p id="the-question"></p>
 		</div>
-		<div id="answer-box" data-step="1" data-intro="Esencialmente en este seccion se mostrarán las preguntas con sus respectivas opciones con un orden alfabetico de literales (A,B,C,D) tome en cuenta mucho este formato para posteriormente ingresar sus propias preguntas">
+		<div id="answer-box" data-step="1" data-intro="Esencialmente en este seccion se mostrarán las preguntas con sus respectivas opciones con un orden alfabetico de literales (PREGUNTA,A,B,C,D,literar correcto) tome en cuenta mucho este formato para posteriormente ingresar sus propias preguntas">
 			<ul>
 				<li class="answer" id="aja" onmouseover="spanvisible('first-answer');">A: <span id="first-answer"></span></li>
 				<li class="answer" onmouseover="spanvisible('second-answer');">B: <span id="second-answer"></span></li>
