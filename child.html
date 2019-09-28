@@ -30,17 +30,18 @@
 		.PH {
 			color: red;
 			text-transform: uppercase;
-			margin:0;
+			margin: 0;
+			text-align: center;
 		}
 
 		.OPH {
 			color: blue;
-			margin:0;
+			margin: 0;
 		}
 
 		.RH {
 			color: green;
-			margin:0;
+			margin: 0;
 
 		}
 
@@ -85,7 +86,7 @@
 				<h6>Ingrese sus preguntas aqui</h6>
 				<div id="message-to-container">
 					<textarea id="message"></textarea>
-					<button id="send-message-parent" class="btn btn-outline-success">Mandar preguntas al padre </button>
+					<button id="send-message-parent" class="btn btn-outline-success">Enviar </button>
 					<button class="btn btn-outline-secondary" onclick="cleantextarea();">Borrar</button>
 				</div>
 			</div>
@@ -111,6 +112,7 @@
 
 		function cleantextarea() {
 			document.getElementById('message').value = "";
+			document.getElementById('message-from-container').innerHTML = "";
 		}
 
 		function drawQuestionshistory(message) {
@@ -121,8 +123,9 @@
 			var i_nq = 1;
 			var indexq_n = 0;
 			var divisible = lines.length % 6;
+			var elementhistory = "<div>";
 			if (divisible === 0) {
-				console.log('es divisible');
+				console.log(lines);
 
 				var i = 0;
 				var j = 0;
@@ -131,32 +134,31 @@
 						if (/\S/.test(lines[i])) {
 							// only push this line if it contains a non whitespace character.
 							output.push($.trim(lines[i]));
+							console.log()
 							i++;
 							j++;
 						}
 
-						var elementhistory = "<div>";
-						elementhistory += "<p class='PH'>" + output[0] + "</p>"
-						elementhistory += "<p class='OPH'>-" + output[1] + "</p>"
-						elementhistory += "<p class='OPH'>-" + output[2] + "</p>"
-						elementhistory += "<p class='OPH'>-" + output[3] + "</p>"
-						elementhistory += "<p class='OPH'>-" + output[4] + "</p>"
-						elementhistory += "<p class='RH'>Respuesta: Opcion '" + output[5] + "'</p>"
-
-
-
 					}
+					elementhistory += "<p class='PH'>" + output[0] + "</p>"
+					elementhistory += "<p class='OPH'>-" + output[1] + "</p>"
+					elementhistory += "<p class='OPH'>-" + output[2] + "</p>"
+					elementhistory += "<p class='OPH'>-" + output[3] + "</p>"
+					elementhistory += "<p class='OPH'>-" + output[4] + "</p>"
+					elementhistory += "<p class='RH'>Respuesta: Opcion '" + output[5] + "'</p><br>"
+					$("#message-from-container").append(elementhistory);
+					elementhistory="<div>"
 					output = [];
 					indexq_n = i_nq;
 					NUMQUESTIONS = i_nq;
 					i_nq++;
 					j = 0;
 				}
-
+				$("#message-from-container").append('</div>');
 			} else {
 				alert('Formato incorrecto');
 			}
-			$("#message-from-container").append(elementhistory + '</div>');
+
 		}
 	</script>
 

@@ -412,8 +412,8 @@
     } else {
       alert('Las preguntas ingresadas no corresponden al formato correcto, porfavor volver a revisar');
     }
-    alert('Se han registrado: ' + indexq_n + " preguntas");
-    console.log(output);
+    // alert('Se han registrado: ' + indexq_n + " preguntas");
+
 
     iniciarwe();
   }
