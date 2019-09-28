@@ -65,7 +65,7 @@
     console.log("(ESTOY AJUERA)Podemos ver e dato" + JSON.stringify(myjson1[0].question));
   }
 
-// Get the containers.
+  // Get the containers.
   let questionContainer = document.getElementById("the-question"),
     answerA = document.getElementById("first-answer"),
     answerB = document.getElementById("second-answer"),
@@ -362,11 +362,21 @@
 
 
   $('#go').click(function() {
-    var lines = $('#input').val().split(/\n/);
+    ProcessChildMessage();
+  })
+
+  function ProcessChildMessage(message) {
+    var lines;
+    if (message != null) {
+       lines= message;
+    }
+    else{
+      lines = $('#input').val().split(/\n/);
+    }
     var output = [];
     var outputText = [];
     var i_nq = 1;
-    var indexq_n=0;
+    var indexq_n = 0;
     var divisible = lines.length % 6;
     if (divisible === 0) {
       console.log('es divisible');
@@ -393,18 +403,17 @@
 
 
         }
-        output=[];
+        output = [];
         indexq_n = i_nq;
         NUMQUESTIONS = i_nq;
         i_nq++;
-        j=0;
+        j = 0;
       }
-    }
-    else{
+    } else {
       alert('Las preguntas ingresadas no corresponden al formato correcto, porfavor volver a revisar');
     }
-    alert('Se han registrado: '+indexq_n+" preguntas");
+    alert('Se han registrado: ' + indexq_n + " preguntas");
     console.log(output);
 
     iniciarwe();
-  })
+  }

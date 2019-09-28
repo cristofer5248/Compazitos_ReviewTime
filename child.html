@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale = 1.0, maximum-scale = 1.0, user-scalable=no">
+	<link rel="stylesheet" href="css/normalize.min.css">
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+	<style type="text/css">
+		h6 {
+
+			text-align: center;
+		}
+
+		#message-to-outer {
+			width: 45%;
+
+			background-color: #f8f8f8;
+			padding: 5px;
+			box-sizing: border-box;
+			float: left;
+			margin: 0 10% 0 0;
+		}
+
+		#message-to-container {
+			height: 150px;
+		}
+
+		.PH {
+			color: red;
+			text-transform: uppercase;
+			margin:0;
+		}
+
+		.OPH {
+			color: blue;
+			margin:0;
+		}
+
+		.RH {
+			color: green;
+			margin:0;
+
+		}
+
+		#message-to-container textarea {
+			height: 200px;
+			margin: 0 0 10px 0;
+			display: block;
+			box-sizing: border-box;
+			width: 100%;
+			resize: none;
+		}
+
+		#message-to-container button {
+			height: 30px;
+			display: block;
+			box-sizing: border-box;
+			width: 100%;
+			margin-bottom: 2px;
+		}
+
+		#message-from-outer {
+			width: 45%;
+			background-color: #e9e9e9;
+			padding: 5px;
+			box-sizing: border-box;
+			float: right;
+		}
+
+		#message-from-container {
+			height: 250px;
+			overflow: auto;
+		}
+	</style>
+</head>
+
+<body>
+
+	<div id="messages-container" class="container">
+
+		<div class="form-group">
+			<div id="message-to-outer">
+				<h6>Ingrese sus preguntas aqui</h6>
+				<div id="message-to-container">
+					<textarea id="message"></textarea>
+					<button id="send-message-parent" class="btn btn-outline-success">Mandar preguntas al padre </button>
+					<button class="btn btn-outline-secondary" onclick="cleantextarea();">Borrar</button>
+				</div>
+			</div>
+		</div>
+
+		<div id="message-from-outer">
+			<h6>Historial de preguntas</h6>
+			<div id="message-from-container"></div>
+		</div>
+
+
+	</div>
+
+	<script>
+		$("#send-message-parent").on('click', function() {
+			if ($.trim($("#message").val()) != '') {
+				// $('#message-from-container').val().split(/\n/);
+				var varFromChild = $('#message').val().split(/\n/);
+				window.opener.ProcessChildMessage(varFromChild);
+				drawQuestionshistory(varFromChild);
+			}
+		});
+
+		function cleantextarea() {
+			document.getElementById('message').value = "";
+		}
+
+		function drawQuestionshistory(message) {
+			// var histo = document.getElementById('message-from-container');
+			var lines = message;
+			var output = [];
+			var outputText = [];
+			var i_nq = 1;
+			var indexq_n = 0;
+			var divisible = lines.length % 6;
+			if (divisible === 0) {
+				console.log('es divisible');
+
+				var i = 0;
+				var j = 0;
+				while (i < lines.length) {
+					while (j < 6) {
+						if (/\S/.test(lines[i])) {
+							// only push this line if it contains a non whitespace character.
+							output.push($.trim(lines[i]));
+							i++;
+							j++;
+						}
+
+						var elementhistory = "<div>";
+						elementhistory += "<p class='PH'>" + output[0] + "</p>"
+						elementhistory += "<p class='OPH'>-" + output[1] + "</p>"
+						elementhistory += "<p class='OPH'>-" + output[2] + "</p>"
+						elementhistory += "<p class='OPH'>-" + output[3] + "</p>"
+						elementhistory += "<p class='OPH'>-" + output[4] + "</p>"
+						elementhistory += "<p class='RH'>Respuesta: Opcion '" + output[5] + "'</p>"
+
+
+
+					}
+					output = [];
+					indexq_n = i_nq;
+					NUMQUESTIONS = i_nq;
+					i_nq++;
+					j = 0;
+				}
+
+			} else {
+				alert('Formato incorrecto');
+			}
+			$("#message-from-container").append(elementhistory + '</div>');
+		}
+	</script>
+
+</body>
+
+</html>

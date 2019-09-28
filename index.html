@@ -14,6 +14,7 @@
 	<link rel="stylesheet" href="css/retrobutton.css">
 	<link rel="stylesheet" href="css/animate.css">
 	<link rel="stylesheet" href="css/introjs.css">
+	<link rel="stylesheet" href="css/child_parent.css">
 	<script type="text/javascript" src="js/jquery-3.4.1.js"></script>
 	<!--<script type="text/javascript" src="js/r.js"></script>-->
 
@@ -51,7 +52,8 @@
 					</button>
 				</div>
 				<div class="modal-body">
-					<textarea id="input" class="fullweight" placeholder="" name="txtarea" id="txtarea" data-step="4" data-intro="Aqui pondran tus preguntas en el formato correcto para posteriormente ser ingresadas al test. El sistema detectara si el formato es incorrecto y la cantidad de preguntas que ingresaste. Puedes aprender mas del formato correcto aqui->"></textarea><br></br>
+					<textarea id="input" class="fullweight" placeholder="" name="txtarea" data-step="4"
+						data-intro="Aqui pondran tus preguntas en el formato correcto para posteriormente ser ingresadas al test. El sistema detectara si el formato es incorrecto y la cantidad de preguntas que ingresaste. Puedes aprender mas del formato correcto aqui->"></textarea><br></br>
 
 					<button id="go" class="start-btn btn-retrostyle" style="font-size:10px;">Enviar</button>
 					<a data-step="5" data-intro="Aqui puedes dar clic para mostrar un ejempl del formato correcto de las preguntas" href="img/example.png" target="_blank">ver formato (click)</a>
@@ -70,9 +72,16 @@
 	</div>
 	<div id="content" class="justContent" onkeydown="keyeventabcd(event);" tabindex="0">
 		<!-- Button trigger modal -->
-		<button id="i_btn" type="button" class="start-btn btn-retrostyle" data-step="3" data-intro="Como pudo ver, inicialmente no hay preguntas y todo se encuentra vacio. Para dar inicio con el test debe dar clic aqui e ingresar las preguntas que posteriormente seran mostradas como fue señalado en el paso numero 1, estas apareceran invisibles para mejorar experiencia de desarrollo del mismo, y seran mostradas hasta que pose el cursor encima de cada literal. " style="font-size:10px;" data-toggle="modal" data-target="#myModal3">
+		<button id="i_btn" type="button" class="start-btn btn-retrostyle" data-step="3"
+			data-intro="Como pudo ver, inicialmente no hay preguntas y todo se encuentra vacio. Para dar inicio con el test debe dar clic aqui e ingresar las preguntas que posteriormente seran mostradas como fue señalado en el paso numero 1, estas apareceran invisibles para mejorar experiencia de desarrollo del mismo, y seran mostradas hasta que pose el cursor encima de cada literal. "
+			style="font-size:10px;" data-toggle="modal" data-target="#myModal3">
 			Ingresar preguntas
 		</button>
+		<button id="open-child-window" type="button" class="start-btn btn-retrostyle"
+			style="font-size:10px;">
+			Ingresar preguntas en Popup
+		</button>
+
 		<button type="button" class="btn btn-success" aria-label="Left Align" onclick="javascript:introJs().start();">?
 			<span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span>
 		</button>
@@ -84,7 +93,8 @@
 		<div id="question-box">
 			<p id="the-question"></p>
 		</div>
-		<div id="answer-box" data-step="1" data-intro="Esencialmente en este seccion se mostrarán las preguntas con sus respectivas opciones con un orden alfabetico de literales (PREGUNTA,A,B,C,D,literar correcto) tome en cuenta mucho este formato para posteriormente ingresar sus propias preguntas">
+		<div id="answer-box" data-step="1"
+			data-intro="Esencialmente en este seccion se mostrarán las preguntas con sus respectivas opciones con un orden alfabetico de literales (PREGUNTA,A,B,C,D,literar correcto) tome en cuenta mucho este formato para posteriormente ingresar sus propias preguntas">
 			<ul>
 				<li class="answer" id="aja" onmouseover="spanvisible('first-answer');">A: <span id="first-answer"></span></li>
 				<li class="answer" onmouseover="spanvisible('second-answer');">B: <span id="second-answer"></span></li>
@@ -96,6 +106,7 @@
 			<option value="1">Grupo A</option>
 			<option value="2">Grupo B</option>
 		</select>
+
 	</div>
 
 	<div class="results-container">
@@ -120,6 +131,7 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 	<script type="text/javascript" src="js/intro.js"></script>
+	<script type="text/javascript" src="js/parent_child_handler.js"></script>
 	<img src="img/logo.png" class="animatedrocket" alt="aqui deberia salir el logo" id="logo" style="">
 </body>
 
