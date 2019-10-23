@@ -32,7 +32,9 @@
 .start-btn{
     text-align: center;
 	display: inline-block;
-	margin:5px;
+  margin-left: 90px;
+  margin-right: 90px;
+  margin-bottom: 10px;
     font-weight: bold;
     padding: 10px 0 10px 10px ;
     background-color: #2f404d;

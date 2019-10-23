@@ -27,11 +27,13 @@
 
 		<div class="logo">
 
-			<img class="logoreview" src="img/review.png" alt="logo review">
+			<img class="logoreview" src="img/review.png" alt="logo review" style="margin-left: 360%;">
 		</div>
-		<div class="threeD">
-			Compazitos Review's Time! v4.8
+
+		<div class="threeD animated pulse infinite">
+			Compazitos Review's Time!
 		</div>
+
 		<div class="score">
 			<p class="points">Puntos</p>
 
@@ -41,6 +43,17 @@
 
 		</div>
 	</header>
+	<!-- Button trigger modal -->
+
+	<button id="i_btn" type="button" class="start-btn btn-retrostyle" data-step="3"
+		data-intro="Como pudo ver, inicialmente no hay preguntas y todo se encuentra vacio. Para dar inicio con el test debe dar clic aqui e ingresar las preguntas que posteriormente seran mostradas como fue señalado en el paso numero 1, estas apareceran invisibles para mejorar experiencia de desarrollo del mismo, y seran mostradas hasta que pose el cursor encima de cada literal. "
+		style="font-size:10px;" data-toggle="modal" data-target="#myModal3" onclick="playselectButton();">
+		Ingresar preguntas
+	</button>
+	<button id="open-child-window" type="button" class="start-btn btn-retrostyle" style="font-size:10px;" onclick="playselectButton();">
+		Ingresar preguntas en Popup
+	</button>
+
 	<!-- Modal -->
 	<div class="modal fade" id="myModal3" role="dialog">
 		<div class="modal-dialog modal-lg">
@@ -61,7 +74,7 @@
 			</div>
 		</div>
 	</div>
-	<div class="modal fade" id="myModal2" role="dialog">
+	<div class="modal fade" id="myModal2" role="dialog" style="background-color:black">
 		<div class="modal-dialog" role="document">
 			<div class="modal-content" style="background-color: transparent;">
 				<div class="modal-body modalpopup" id="bodymodal2">
@@ -70,17 +83,10 @@
 			</div>
 		</div>
 	</div>
-	<div id="content" class="justContent" onkeydown="keyeventabcd(event);" tabindex="0">
-		<!-- Button trigger modal -->
-		<button id="i_btn" type="button" class="start-btn btn-retrostyle" data-step="3"
-			data-intro="Como pudo ver, inicialmente no hay preguntas y todo se encuentra vacio. Para dar inicio con el test debe dar clic aqui e ingresar las preguntas que posteriormente seran mostradas como fue señalado en el paso numero 1, estas apareceran invisibles para mejorar experiencia de desarrollo del mismo, y seran mostradas hasta que pose el cursor encima de cada literal. "
-			style="font-size:10px;" data-toggle="modal" data-target="#myModal3">
-			Ingresar preguntas
-		</button>
-		<button id="open-child-window" type="button" class="start-btn btn-retrostyle"
-			style="font-size:10px;">
-			Ingresar preguntas en Popup
-		</button>
+	<div style="display: none;" id="content1" class="justContent" onkeydown="keyeventabcd(event);" tabindex="0">
+		<audio autoplay loop>
+			<source src="sound/backgroundM.mp3">
+		</audio>
 
 		<button type="button" class="btn btn-success" aria-label="Left Align" onclick="javascript:introJs().start();">?
 			<span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span>
@@ -119,7 +125,7 @@
 		</div>
 	</div>
 	<footer id="footer">
-		<p>Powered by Cristofer5248 .</p>
+		<p>Powered by Cristofer5248. v5.0.1</p>
 	</footer>
 
 
