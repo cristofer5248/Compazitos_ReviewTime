@@ -4,8 +4,10 @@
   mySound = new sound("sound/correct_mario.mp3");
   var soundIncorrect;
   var soundSelect;
+  var countdownRocket;
   soundIncorrect = new sound("sound/incorrect_mario.mp3");
   soundSelect = new sound("sound/start.wav");
+  countdownRocket = new sound("sound/countdown.mp3")
   var ultimavar = 0;
   var myjson1;
   //Bloqueo de teclas para contestar
@@ -34,10 +36,23 @@
     currentQuestion: 0
   };
 
-  function playselectButton(){
+  function playselectButton() {
     soundSelect.play();
   }
 
+  function musicplayBackground() {
+    var npista = Math.floor(Math.random() * 3) + 1;
+    var audioelemente = document.createElement("AUDIO");
+    audioelemente.id = 'musicplayer';
+
+    if (audioelemente.canPlayType("audio/mpeg")) {
+      audioelemente.setAttribute("src", "sound/background" + npista + ".mp3");
+    }
+    // x.setAttribute("controls", "controls");
+    audioelemente.setAttribute("autoplay", "autoplay");
+    audioelemente.setAttribute("loop", "loop");
+    document.body.appendChild(audioelemente);
+  }
   // The questions.
   function mifuncionnoob() {
     let myRequest = new Request("json/example.json");
@@ -232,7 +247,7 @@
   }
   //Let's start!
   $(document).ready(function($) {
-
+    musicplayBackground();
   });
 
   function sound(src) {
@@ -328,13 +343,13 @@
   function keyeventabcd(event) {
     var key1 = event.keyCode;
     if (!blockkey) {
-      if (key1 == 65) {//player A Grupo A letra de teclado A
+      if (key1 == 65) { //player A Grupo A letra de teclado A
         document.getElementById('teamS').selectedIndex = "0";
         blockkey = true;
         key_AnswerB = false;
         key_AnswerA = true;
         alert('Equipo A tomó la iniciativa');
-      } else if (key1 == 13) {//Player B grupo B letra de teclado enter
+      } else if (key1 == 13) { //Player B grupo B letra de teclado enter
         document.getElementById('teamS').selectedIndex = "1";
         alert('Equipo B tomó la iniciativa');
         blockkey = true;
@@ -344,46 +359,40 @@
     }
     //RESPONDER LITERALES PLAYER 1 (A)
     if (key_AnswerA) {
-      if (key1 == 90) {//letra de teclado Z
+      if (key1 == 90) { //letra de teclado Z
         document.getElementById("first-answer").click(); //apretar la opcion a
-        key_AnswerA=false;
+        key_AnswerA = false;
         blockkey = false;
-      }
-      else if (key1 == 88) {//letra de teclado X
+      } else if (key1 == 88) { //letra de teclado X
         document.getElementById("second-answer").click(); //apretar la opcion b
-        key_AnswerA=false;
+        key_AnswerA = false;
         blockkey = false;
-      }
-      else if (key1 == 67) {//Letra de teclado C
+      } else if (key1 == 67) { //Letra de teclado C
         document.getElementById("third-answer").click(); //apretar la opcion c
-        key_AnswerA=false;
+        key_AnswerA = false;
         blockkey = false;
-      }
-      else if (key1 == 86) {//Letra de teclado V
+      } else if (key1 == 86) { //Letra de teclado V
         document.getElementById("fourth-answer").click(); //apretar la opcion d
-        key_AnswerA=false;
+        key_AnswerA = false;
         blockkey = false;
       }
     }
     if (key_AnswerB) {
-      if (key1 == 50) {//letra de teclado 2
+      if (key1 == 50) { //letra de teclado 2
         document.getElementById("first-answer").click(); //apretar la opcion a
-        key_AnswerB=false;
+        key_AnswerB = false;
         blockkey = false;
-      }
-      else if (key1 == 51) {//letra de teclado 3
+      } else if (key1 == 51) { //letra de teclado 3
         document.getElementById("second-answer").click(); //apretar la opcion b
-        key_AnswerB=false;
+        key_AnswerB = false;
         blockkey = false;
-      }
-      else if (key1 == 52) {//Letra de teclado 4
+      } else if (key1 == 52) { //Letra de teclado 4
         document.getElementById("third-answer").click(); //apretar la opcion c
-        key_AnswerB=false;
+        key_AnswerB = false;
         blockkey = false;
-      }
-      else if (key1 == 49) {//Letra de teclado 1
+      } else if (key1 == 49) { //Letra de teclado 1
         document.getElementById("fourth-answer").click(); //apretar la opcion d
-        key_AnswerB=false;
+        key_AnswerB = false;
         blockkey = false;
       }
     }
@@ -431,10 +440,32 @@
   $('#go').click(function() {
     ProcessChildMessage();
     $('#myModal3').modal('hide');
-    document.getElementById("content").style.display="block";
-    document.getElementById("i_btn").style.display="none";
-    document.getElementById("open-child-window").style.display="none";
+    var chalkboard = document.getElementById("content1");
+    document.getElementById("i_btn").style.display = "none";
+    document.getElementById("open-child-window").style.display = "none";
     soundSelect.play();
+    setTimeout(function() {
+      document.getElementById("tituloletra").className = "threeD animated fade out";
+    }, 1200);
+    setTimeout(function() {
+      document.getElementById('header').style.display = "none";
+      chalkboard.style.display = "block";
+      chalkboard.style.marginTop = "6%";
+      chalkboard.classList.add('animated', 'zoomIn');
+    }, 2000);
+    countdownRocket.play();
+    var mirocket =document.getElementById('logo');
+    mirocket.className = 'animatedrocket logoWithoutAnimation';
+    mirocket.classList.add('shake-hard','shake-constant');
+    setTimeout(function(){
+      mirocket.className = 'animatedrocket logoWithoutAnimation animated fadeOutUpBig';
+    },2000)
+    setTimeout(function(){
+      mirocket.className = 'animatedrocket logoAdios';
+    },3000)
+
+    document.getElementById('musicplayer').pause();
+
   })
 
   function ProcessChildMessage(message) {
