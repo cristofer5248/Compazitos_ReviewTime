@@ -8,3 +8,17 @@
 #myModal3 {
   height: 80%;
 }
+
+.blink_me {
+  animation: blinker 0.3s linear infinite;
+  -webkit-text-stroke: 2px green;
+  color: white;
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0;
+    color:white;
+    -webkit-text-stroke: 2px white;
+  }
+}

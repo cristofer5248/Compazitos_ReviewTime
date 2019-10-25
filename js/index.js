@@ -12,8 +12,10 @@
   var myjson1;
   //Bloqueo de teclas para contestar
   var blockkey = false;
-  var key_AnswerB = true;
-  var key_AnswerA = true;
+  var key_AnswerB = false;
+  var key_AnswerA = false;
+
+  var losAtag = document.getElementsByTagName('span');
 
   // var animation='<button type="button" class="btn btn-secondary" data-dismiss="myModal2">Close</button>';
   //esta es la contante que no puedo cambiar en todo el ciclo de ejecucion
@@ -38,6 +40,25 @@
 
   function playselectButton() {
     soundSelect.play();
+  }
+
+  function blinkcorrect(paragraph_) {
+	var whoblink = paragraph_=="a" ? "first-answer":
+    			       paragraph_=="b" ? "second-answer":
+    			       paragraph_=="c" ? "third-answer":
+    			       paragraph_=="d" ? "fourth-answer": 'otro numero';
+  document.getElementById(whoblink).classList.add("blink_me");
+  // var whoblink = paragraph_=="a" ? 1:
+  //   			       paragraph_=="b" ? 2:
+  //   			       paragraph_=="c" ? 3:
+  //   			       paragraph_=="d" ? 4: 'otro numero';
+  // document.getElementsByTagName("span")[whoblink].classList.add("blink_me");
+  }
+
+  function blinkcorrectNO() {
+    for (var i = 0; i < losAtag.length; i++) {
+      losAtag[i].classList.remove("blink_me");
+    }
   }
 
   function musicplayBackground() {
@@ -180,22 +201,29 @@
       } else {
         quizStats.correct2++;
       }
-      mySound.play();
-      ramdomGif();
-      //aqui
+      soundSelect.play();
+      blinkcorrect(givenAnswer)
+      setTimeout(function() {
+        mySound.play();
+        ramdomGif();
+        showpopupCorrect();
+      }, 3000);
 
-      showpopupCorrect();
-      this.classList.add("correct");
     } else {
       if (conceptName == 1) {
         quizStats.correct2++;
       } else {
         quizStats.correct++;
       }
-      ramdomGifBad();
-      showpopupCorrect();
-      soundIncorrect.play();
-      quizStats.wrong++;
+      soundSelect.play();
+      blinkcorrect(givenAnswer)
+      setTimeout(function(){
+        ramdomGifBad();
+        showpopupCorrect();
+        soundIncorrect.play();
+        quizStats.wrong++;
+
+      },3000)
       this.classList.add("wrong");
     }
     hidequestion();
@@ -205,16 +233,22 @@
     // Check if max num of questions has been reached.
     //limitQ = $('#msg').html($('input:textbox').val());
     if (quizStats.counter < NUMQUESTIONS) {
-      setTimeout(clearClasses, 2000);
-      setTimeout(getNextQuestion, 2000);
+      setTimeout(clearClasses, 4000);
+      setTimeout(getNextQuestion, 4000);
+      setTimeout(blinkcorrectNO,4000);
+      setTimeout(countdown,4000);
+
     }
     // If so, stop the quiz.
     else {
+      setTimeout(function(){
       showTheResults();
+    },4000);
+
       //desapecer
       setTimeout(function() {
         $('#myModal2').modal('hide');
-      }, 3000);
+      }, 8000);
     }
   }
   // Clear classes.
@@ -248,6 +282,7 @@
   //Let's start!
   $(document).ready(function($) {
     musicplayBackground();
+    countdown();
   });
 
   function sound(src) {
@@ -427,13 +462,15 @@
   }
 
   function desaparecerbtn1() {
-    document.getElementById("n_btn").style.display = "none";
-    document.getElementById("i_btn").style.display = "block";
+    for (var i = 0; i < losAtag.length; i++) {
+      losAtag[i].style.visibility = "visible";
+    }
   }
 
   function desaparecerbtn2() {
-    document.getElementById("i_btn").style.display = "none";
-    document.getElementById("n_btn").style.display = "block";
+    for (var i = 0; i < losAtag.length; i++) {
+      losAtag[i].style.visibility = "hidden";
+    }
   }
 
 
@@ -454,15 +491,15 @@
       chalkboard.classList.add('animated', 'zoomIn');
     }, 2000);
     countdownRocket.play();
-    var mirocket =document.getElementById('logo');
+    var mirocket = document.getElementById('logo');
     mirocket.className = 'animatedrocket logoWithoutAnimation';
-    mirocket.classList.add('shake-hard','shake-constant');
-    setTimeout(function(){
+    mirocket.classList.add('shake-hard', 'shake-constant');
+    setTimeout(function() {
       mirocket.className = 'animatedrocket logoWithoutAnimation animated fadeOutUpBig';
-    },2000)
-    setTimeout(function(){
+    }, 2000)
+    setTimeout(function() {
       mirocket.className = 'animatedrocket logoAdios';
-    },3000)
+    }, 3000)
 
     document.getElementById('musicplayer').pause();
 

@@ -3,5 +3,5 @@ function spanvisible(x){
 }
 function hidemodal(){
   $('#myModal2').modal('hide');
-  document.getElementById("content").focus();
+  document.getElementById("content1").focus();
 }

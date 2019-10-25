@@ -1,88 +1,135 @@
 <!DOCTYPE html>
-<html lang="en" >
-	<head>
-		<meta charset="UTF-8">
-		<title>Quiz Master</title>
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link href="https://fonts.googleapis.com/css?family=Merriweather|Open+Sans:700,800" rel="stylesheet">
-		<link rel="stylesheet" href="css/normalize.min.css">
-		<link rel="stylesheet" href="css/bootstrap.min.css">
-		
-		<link rel="stylesheet" href="css/style.css">
-		
-	</head>
-	<body>
-		<header id="header">
-			<div class="logo">
-				<svg id="circle" xmlns="http://www.w3.org/2000/svg" version="1.1" height="100" width="100">
-					<circle cx="50" cy="50" r="50" fill="#c80815" />
-					<text x="25" y="70" fill="#ffffff" style="font-size: 60px;">Q</text>
-				</svg>
-			</div>
-			<div class="title">
-				<h1 class="site-title">Quiz <span class="small">Master</span></h1>
-			</div>
-			<div class="score">
-				<p id="score-counter">0</p>
-				<p class="points">Points</p>
-			</div>
-		</header>
-		<!-- Modal -->
-		<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-			<div class="modal-dialog" role="document">
-				<div class="modal-content">
-					<div class="modal-header">
-						<h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
-						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Compazitos Review Time!</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="https://fonts.googleapis.com/css?family=Merriweather|Open+Sans:700,800" rel="stylesheet">
+	<link rel="stylesheet" href="css/normalize.min.css">
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/shakeanimation.css">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/effects.css">
+	<link rel="stylesheet" href="css/retrobutton.css">
+	<link rel="stylesheet" href="css/animate.css">
+	<link rel="stylesheet" href="css/introjs.css">
+	<link rel="stylesheet" href="css/child_parent.css">
+	<script type="text/javascript" src="js/jquery-3.4.1.js"></script>
+	<!--<script type="text/javascript" src="js/r.js"></script>-->
+
+</head>
+
+<body>
+	<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+	<link rel="icon" href="img/favicon.ico" type="image/x-icon">
+	<header id="header">
+
+		<div class="logo">
+
+			<img class="logoreview" src="img/review.png" alt="logo review" style="margin-left: 360%;">
+		</div>
+
+		<div id="tituloletra" class="threeD animated pulse infinite">
+			Compazitos Review's Time!
+		</div>
+		<div class="timer">60</div>
+	</header>
+	<!-- Button trigger modal -->
+
+	<button id="i_btn" type="button" class="start-btn btn-retrostyle" data-step="3"
+		data-intro="Como pudo ver, inicialmente no hay preguntas y todo se encuentra vacio. Para dar inicio con el test debe dar clic aqui e ingresar las preguntas que posteriormente seran mostradas como fue señalado en el paso numero 1, estas apareceran invisibles para mejorar experiencia de desarrollo del mismo, y seran mostradas hasta que pose el cursor encima de cada literal. "
+		style="font-size:10px;" data-toggle="modal" data-target="#myModal3" onclick="playselectButton();">
+		Ingresar preguntas
+	</button>
+	<button id="open-child-window" type="button" class="start-btn btn-retrostyle" style="font-size:10px;" onclick="playselectButton();">
+		Ingresar preguntas en Popup
+	</button>
+	<center>
+		<div><input type="checkbox" id="customq" onclick="checkbox_action()">¿Literales ocultos?</input></div>
+	</center>
+
+	<!-- Modal -->
+	<div class="modal fade" id="myModal3" role="dialog">
+		<div class="modal-dialog modal-lg">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h4 class="modal-title" id="exampleModalLongTitle" style="color: black">Ingreso de preguntas</h4>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 						<span aria-hidden="true">&times;</span>
-						</button>
-					</div>
-					<div class="modal-body">
-						<label for="example1" style="color:black;"> N° de preguntas:</label>
-						<input class="form-control" id="limitq" aria-describedby="emailHelp" placeholder="Ingrese un numero" type="number">
-					</div>
-					<div class="modal-footer">
-						<button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-						<button type="button" id="enviar1" class="btn btn-primary">Enviar</button>
-					</div>
+					</button>
+				</div>
+				<div class="modal-body">
+					<textarea id="input" class="fullweight" placeholder="" name="txtarea" data-step="4"
+						data-intro="Aqui pondran tus preguntas en el formato correcto para posteriormente ser ingresadas al test. El sistema detectara si el formato es incorrecto y la cantidad de preguntas que ingresaste. Puedes aprender mas del formato correcto aqui->"></textarea><br></br>
+
+					<button id="go" class="start-btn btn-retrostyle" style="font-size:10px;">Enviar</button>
+					<a data-step="5" data-intro="Aqui puedes dar clic para mostrar un ejempl del formato correcto de las preguntas" href="img/example.png" target="_blank">ver formato (click)</a>
 				</div>
 			</div>
 		</div>
-		<div id="content">
-			<!-- Button trigger modal -->
-			<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">
-			Launch demo modal
-			</button>
-			<div id="question-box"><p id="the-question"></p></div>
-			<div id="answer-box">
-				<ul>
-					<li class="answer">A: <span id="first-answer"></span></li>
-					<li class="answer">B: <span id="second-answer"></span></li>
-					<li class="answer">C: <span id="third-answer"></span></li>
-					<li class="answer">D: <span id="fourth-answer"></span></li>
-				</ul>
-			</div>
-			<select id="teamS">
-				<option value="1">Grupo A</option>
-				<option value="2">Grupo B</option>
-			</select>
-		</div>
-		<div class="results-container">
-			<div class="results">
-				<h1>Resultados!</h1>
-				<div class="result-text"><p>Hemos finalizado, Fueron un total de : <span id="num-total">0</span> preguntas respondidas correctamente, Equipo A : <span id="num-correct">0</span> preguntas correctas, Equipo B: <span id="num-correct2">0</span> preguntas correctas, Respuestas incorrectas en total: <span id="num-wrong">0</span>!</div>
+
+	</div>
+	<div class="modal fade" id="myModal2" role="dialog" style="background-color:black">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content" style="background-color: transparent;">
+				<div class="modal-body modalpopup" id="bodymodal2">
+
+				</div>
 			</div>
 		</div>
-		<footer id="footer">
-			<p>Just another excercise in JavaScript.</p>
-		</footer>
-		
-		
-		<script  src="js/index.js"></script>
-		<script type="text/javascript" src="js/jquery-3.4.1.js"></script>
-		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-		
-	</body>
+	</div>
+	<div  id="content1" class="justContent" onkeydown="keyeventabcd(event);" tabindex="0">
+		<button type="button" class="btn btn-success" aria-label="Left Align" onclick="javascript:introJs().start();">?
+			<span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span>
+		</button>
+		<div id="question-box">
+			<p id="the-question"></p>
+		</div>
+		<div id="answer-box" data-step="1"
+			data-intro="Esencialmente en este seccion se mostrarán las preguntas con sus respectivas opciones con un orden alfabetico de literales (PREGUNTA,A,B,C,D,literar correcto) tome en cuenta mucho este formato para posteriormente ingresar sus propias preguntas">
+			<ul>
+				<li class="answer" id="aja" onmouseover="spanvisible('first-answer');">A: <span id="first-answer"></span></li>
+				<li class="answer" onmouseover="spanvisible('second-answer');">B: <span id="second-answer"></span></li>
+				<li class="answer" onmouseover="spanvisible('third-answer');">C: <span id="third-answer"></span></li>
+				<li class="answer" onmouseover="spanvisible('fourth-answer');">D: <span id="fourth-answer"></span></li>
+			</ul>
+		</div>
+	<div class="row">
+	<div class="col-8">
+		<input>bueno</button>
+	</div>
+		<div class="score col-4">
+			<h1>aver</h1>
+		</div>
+</div>
+	</div>
+
+	<div class="results-container">
+		<div class="results">
+			<h1>Resultados!</h1>
+			<div class="result-text">
+				<p>Hemos finalizado, Fueron un total de : <span id="num-total">0</span> preguntas respondidas correctamente <span id="num-total">0</span><br> Equipo A : <span id="num-correct">0</span> preguntas correctas<br> Equipo B: <span
+						id="num-correct2">0</span> preguntas correctas <br>Respuestas incorrectas en total: <span id="num-wrong">0</span>!
+			</div>
+		</div>
+	</div>
+	<footer id="footer">
+		<p>Powered by Cristofer5248. v5.0.1</p>
+	</footer>
+
+
+	<script src="js/index.js"></script>
+	<script src="js/style.js"></script>
+	<!-- <script  src="js/retrobutton.js"></script> -->
+	<!--<script type="text/javascript" src="js/jquery-3.4.1.js"></script>-->
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+	<script type="text/javascript" src="js/intro.js"></script>
+	<script type="text/javascript" src="js/countdown.js"></script>
+	<script type="text/javascript" src="js/parent_child_handler.js"></script>
+	<img src="img/logo.png" class="animatedrocket logoRocket" alt="aqui deberia salir el logo" id="logo" style="">
+</body>
+
 </html>

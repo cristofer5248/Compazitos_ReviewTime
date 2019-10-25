@@ -95,8 +95,7 @@ ul {
 }
 
 .score {
-  text-align: center;
-  margin-left: auto;
+  
 }
 
 #score-counter, #score-counter2 {
@@ -128,6 +127,13 @@ ul {
   margin-left: 1em;
   transition: 0.1s;
   visibility: hidden;
+  text-transform: uppercase;
+}
+.answer span {
+  font-family: chalkFont;
+  cursor: pointer;
+  margin-left: 1em;
+  transition: 0.1s;
   text-transform: uppercase;
 }
 
@@ -242,33 +248,34 @@ ul {
   height: auto;
   z-index: 0;
   bottom: 0;
-  animation-name: plane-fly;
-  animation-duration: 15s;
-  animation-iteration-count: infinite;
-  animation-timing-function: linear;
+  animation: plane-fly 13s linear, 3s bouncem infinite linear;
+
+  /* animation-duration: 13s;
+  animation-iteration-count: ;
+  animation-timing-function: linear; */
 }
 
 @-webkit-keyframes plane-fly {
   0% {
     left: -10%;
-    transform: rotate(1080deg);
-    transform: scale(1.4);
+    transform: rotateZ(40deg);
+
   }
 
-  50% {
-    left: 110%;
-    transform: rotate(1080deg);
-    transform: scale(1);
+  20% {
+    left: 100%;
+    transform: rotateZ(100deg);
+
   }
 
-  51% {
-    transform: rotateY(180deg);
+  21% {
+    transform: rotateZ(-100deg);
     animation-duration: 30s;
   }
 
   100% {
     left: -110%;
-    transform: scale(.4) rotateY(180deg);
+    transform: rotateZ(-100deg);
     animation-duration: 30s;
   }
 }
@@ -340,7 +347,9 @@ ul {
   font-size: 3.5em;
   color: white;
   white-space: nowrap;
-  position: absolute;
+  position: relative;
+  /* //si el titulo se mira mal
+  //position: absolute; */
   font-size: 4em;
   font-family: sans-serif;
   letter-spacing: 0.1em;
@@ -364,3 +373,12 @@ ul {
 .answer-box span {}
 
 .disappear_responsive {}
+
+  .timer {
+    font-size: 3.0em;
+    padding: 10px;
+    text-align: center;
+    margin: 0 auto;
+
+    /* display: none; */
+  }
