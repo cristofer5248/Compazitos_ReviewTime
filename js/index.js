@@ -282,7 +282,6 @@
   //Let's start!
   $(document).ready(function($) {
     musicplayBackground();
-    countdown();
   });
 
   function sound(src) {
@@ -384,12 +383,15 @@
         key_AnswerB = false;
         key_AnswerA = true;
         alert('Equipo A tomó la iniciativa');
+        countdown();
       } else if (key1 == 13) { //Player B grupo B letra de teclado enter
         document.getElementById('teamS').selectedIndex = "1";
         alert('Equipo B tomó la iniciativa');
         blockkey = true;
         key_AnswerA = false;
         key_AnswerB = true;
+        countdown();
+
       }
     }
     //RESPONDER LITERALES PLAYER 1 (A)
