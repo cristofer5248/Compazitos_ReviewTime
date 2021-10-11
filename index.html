@@ -42,13 +42,48 @@
 		style="font-size:10px;" data-toggle="modal" data-target="#myModal3" onclick="playselectButton();">
 		Ingresar preguntas
 	</button>
-	<button id="open-child-window" type="button" class="start-btn btn-retrostyle" style="font-size:10px;" onclick="playselectButton();">
+	<button id="open-child-window" type="button" class="start-btn btn-retrostyle" style="font-size:10px;"
+		onclick="playselectButton();">
 		Ingresar preguntas en Popup
+	</button>
+	<button type="button" data-toggle="modal" data-target="#myModal4" class="start-btn btn-retrostyle"
+		style="font-size:10px;" onclick="obtainAllFields();">
+		OPCIONES
 	</button>
 	<center>
 		<div><input type="checkbox" id="customq" onclick="checkbox_action()">¿Literales ocultos?</input></div>
 	</center>
+	<!--opciones-->
+	<div class="modal fade" id="myModal4" role="dialog">
+		<div class="modal-dialog modal-lg">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h4 class="modal-title" id="exampleModalLongTitle" style="color: black">Personaliza el juego</h4>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<form>
+						<div class="form-group row">
+							<label for="staticEmail" class="col-sm-2 col-form-label">Titulo</label>
+							<div class="col-sm-10">
+								<input type="text" class="form-control-plaintext" id="txttitle">
+							</div>
+						</div>
+						<div class="form-group row">
+							<label for="inputPassword" class="col-sm-2 col-form-label">Logo</label>
+							<div class="col-sm-10">
+								<input type="text" class="form-control" id="txtlogo" placeholder="URL">
+							</div>
+						</div>
+						<button id="gochanges" class="start-btn btn-retrostyle" style="font-size:10px;">Enviar</button>
+					</form>
+				</div>
+			</div>
+		</div>
 
+	</div>
 	<!-- Modal -->
 	<div class="modal fade" id="myModal3" role="dialog">
 		<div class="modal-dialog modal-lg">
@@ -64,7 +99,9 @@
 						data-intro="Aqui pondran tus preguntas en el formato correcto para posteriormente ser ingresadas al test. El sistema detectara si el formato es incorrecto y la cantidad de preguntas que ingresaste. Puedes aprender mas del formato correcto aqui->"></textarea><br></br>
 
 					<button id="go" class="start-btn btn-retrostyle" style="font-size:10px;">Enviar</button>
-					<a data-step="5" data-intro="Aqui puedes dar clic para mostrar un ejempl del formato correcto de las preguntas" href="img/example.png" target="_blank">ver formato (click)</a>
+					<a data-step="5"
+						data-intro="Aqui puedes dar clic para mostrar un ejempl del formato correcto de las preguntas"
+						href="img/example.png" target="_blank">ver formato (click)</a>
 				</div>
 			</div>
 		</div>
@@ -89,7 +126,8 @@
 		<div id="answer-box" data-step="1"
 			data-intro="Esencialmente en este seccion se mostrarán las preguntas con sus respectivas opciones con un orden alfabetico de literales (PREGUNTA,A,B,C,D,literar correcto) tome en cuenta mucho este formato para posteriormente ingresar sus propias preguntas">
 			<ul>
-				<li class="answer" id="aja" onmouseover="spanvisible('first-answer');">A: <span id="first-answer"></span></li>
+				<li class="answer" id="aja" onmouseover="spanvisible('first-answer');">A: <span
+						id="first-answer"></span></li>
 				<li class="answer" onmouseover="spanvisible('second-answer');">B: <span id="second-answer"></span></li>
 				<li class="answer" onmouseover="spanvisible('third-answer');">C: <span id="third-answer"></span></li>
 				<li class="answer" onmouseover="spanvisible('fourth-answer');">D: <span id="fourth-answer"></span></li>
@@ -97,7 +135,9 @@
 		</div>
 		<div class="row">
 			<div class="col-7">
-				<select id="teamS" data-step="2" data-intro="Esta seccion muestra a que equipo le sumaras un punto con cada respuesta correcta, si es incorrecta se la sumara al equipo contrario." class="custom-select mr-sm-2">
+				<select id="teamS" data-step="2"
+					data-intro="Esta seccion muestra a que equipo le sumaras un punto con cada respuesta correcta, si es incorrecta se la sumara al equipo contrario."
+					class="custom-select mr-sm-2">
 					<option value="1">Grupo A</option>
 					<option value="2">Grupo B</option>
 				</select>
@@ -119,8 +159,10 @@
 		<div class="results">
 			<h1>Resultados!</h1>
 			<div class="result-text">
-				<p>Hemos finalizado, Fueron un total de : <span id="num-total">0</span> preguntas respondidas correctamente <span id="num-total">0</span><br> Equipo A : <span id="num-correct">0</span> preguntas correctas<br> Equipo B: <span
-						id="num-correct2">0</span> preguntas correctas <br>Respuestas incorrectas en total: <span id="num-wrong">0</span>!
+				<p>Hemos finalizado, Fueron un total de : <span id="num-total">0</span> preguntas respondidas
+					correctamente <span id="num-total">0</span><br> Equipo A : <span id="num-correct">0</span> preguntas
+					correctas<br> Equipo B: <span id="num-correct2">0</span> preguntas correctas <br>Respuestas
+					incorrectas en total: <span id="num-wrong">0</span>!
 			</div>
 		</div>
 	</div>
@@ -134,11 +176,16 @@
 	<!-- <script  src="js/retrobutton.js"></script> -->
 	<!--<script type="text/javascript" src="js/jquery-3.4.1.js"></script>-->
 
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+		integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+		crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+		integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+		crossorigin="anonymous"></script>
 	<script type="text/javascript" src="js/intro.js"></script>
 	<script type="text/javascript" src="js/countdown.js"></script>
 	<script type="text/javascript" src="js/parent_child_handler.js"></script>
+	<script type="text/javascript" src="js/setting.js"></script>
 	<img src="img/logo.png" class="animatedrocket logoRocket" alt="aqui deberia salir el logo" id="logo" style="">
 </body>
 

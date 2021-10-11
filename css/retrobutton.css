@@ -53,3 +53,6 @@
 	position: relative;
 	top: .2em;
 }
+.modal-body label {
+	color:black
+}
