@@ -73,7 +73,7 @@
 		#message-from-container {
 			height: 250px;
 			overflow: auto;
-		}
+		}		
 	</style>
 </head>
 
@@ -88,6 +88,7 @@
 					<textarea id="message"></textarea>
 					<button id="send-message-parent" class="btn btn-outline-success">Enviar </button>
 					<button class="btn btn-outline-secondary" onclick="cleantextarea();">Borrar</button>
+					<button class="btn btn-outline-secondary" id="startpopup" onclick="iniciarjuego1();" disabled>Iniciar Juego</button>
 				</div>
 			</div>
 		</div>
@@ -101,11 +102,11 @@
 	</div>
 
 	<script>
+		
 		$("#send-message-parent").on('click', function() {
 			if ($.trim($("#message").val()) != '') {
 				// $('#message-from-container').val().split(/\n/);
-				var varFromChild = $('#message').val().split(/\n/);
-				window.opener.ProcessChildMessage(varFromChild);
+				var varFromChild = $('#message').val().split(/\n/);												
 				drawQuestionshistory(varFromChild);
 			}
 		});
@@ -113,6 +114,11 @@
 		function cleantextarea() {
 			document.getElementById('message').value = "";
 			document.getElementById('message-from-container').innerHTML = "";
+			startover();
+		}
+		function startover(){
+			document.getElementById("startpopup").disabled = true;
+			document.getElementById("send-message-parent").disabled = false;
 		}
 
 		function drawQuestionshistory(message) {
@@ -155,10 +161,19 @@
 					j = 0;
 				}
 				$("#message-from-container").append('</div>');
+				document.getElementById("startpopup").disabled = false;
+				document.getElementById("send-message-parent").disabled = true;
+				window.opener.ProcessChildMessageSave(message);
+				
 			} else {
 				alert('Formato incorrecto');
 			}
 
+		}
+
+		function iniciarjuego1(){
+			document.getElementById("startpopup").disabled = true;
+			window.opener.startgame1();			
 		}
 	</script>
 
