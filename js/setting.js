@@ -6,9 +6,12 @@ function obtainAllFields() {
 
 function sentChanges(){
     $("#tituloletra").text($("#txttitle").val());
+    $("#logo").attr('src',$("#txtlogo").val());
+    document.body.style.backgroundImage = "url('"+$("#txtfondo").val()+"')";
+    
     
 }
 $('#gochanges').click(function() {
-    alert('ff');
+    $('#myModal4').modal('hide');
     sentChanges();
 })
